@@ -1,0 +1,102 @@
+# Makefile for Class-Based Testbench
+# Systolic Array Matrix-Multiply Accelerator  (ECE 593)
+#
+# Usage:
+#   make              — compile + simulate + coverage report  (N=4 default)
+#   make N=<val> all  — run with a different matrix size
+#   make wave         — open Verdi waveform after simulation
+#   make cov          — re-generate coverage report (if sim already ran)
+#   make clean        — remove all generated files
+#
+# Example:
+#   make clean && make N=4 all    # 4×4 matrix
+#   make clean && make N=2 all    # 2×2 matrix
+#   make clean && make N=8 all    # 8×8 matrix
+
+VCS   = vcs
+VERDI = verdi
+
+SEED ?= 42
+N    ?= 4
+
+# ── RTL source files (relative to CLASS_TB) ───────────────────────────────────
+RTL = ../rtl/pe.sv              \
+      ../rtl/input_skew.sv      \
+      ../rtl/controller.sv      \
+      ../rtl/systolic_array.sv  \
+      ../rtl/mm_accelerator_top.sv
+
+# ── Testbench top — all class files are `included inside this file ─────────────
+TB = tb_class_mm_accelerator.sv
+
+SRCS    = $(RTL) $(TB)
+SIMV    = simv_class
+COV_DIR = class_cov_dir.vdb
+
+# ── VCS compile flags ─────────────────────────────────────────────────────────
+VCS_FLAGS = -full64                      \
+            -sverilog                    \
+            -timescale=1ns/1ps           \
+            -debug_access+all            \
+            -kdb                         \
+            +define+FSDB                 \
+            +define+MATRIX_N=$(N)        \
+            +incdir+.                    \
+            -cm line+branch+cond+fsm+tgl \
+            -cm_dir $(COV_DIR)
+
+# ── Simulation flags ──────────────────────────────────────────────────────────
+SIM_FLAGS = -cm line+branch+cond+fsm+tgl \
+            -cm_dir $(COV_DIR)           \
+            +ntb_random_seed=$(SEED)
+
+# ═════════════════════════════════════════════════════════════════════════════
+# DEFAULT TARGET — compile + simulate + coverage report in one command
+# ═════════════════════════════════════════════════════════════════════════════
+.PHONY: all wave cov clean
+
+all:
+	@echo "========================================================"
+	@echo "  STEP 1 of 3 : Compiling RTL + Class Testbench (N=$(N)) ..."
+	@echo "========================================================"
+	$(VCS) $(VCS_FLAGS) $(SRCS) -o $(SIMV) 2>&1 | tee class_compile.log ; test $${PIPESTATUS[0]} -eq 0
+	@echo ""
+	@echo "========================================================"
+	@echo "  STEP 2 of 3 : Running Simulation ..."
+	@echo "========================================================"
+	./$(SIMV) $(SIM_FLAGS) 2>&1 | tee class_sim.log ; test $${PIPESTATUS[0]} -eq 0
+	@echo ""
+	@echo "========================================================"
+	@echo "  Opening Verdi waveform (novas_class.fsdb) ..."
+	@echo "========================================================"
+	$(VERDI) -ssf novas_class.fsdb &
+	@echo ""
+	@echo "========================================================"
+	@echo "  STEP 3 of 3 : Generating Coverage Report ..."
+	@echo "========================================================"
+	urg -dir $(COV_DIR) -format both -report class_cov_report 2>&1 | tee class_cov.log
+	@echo ""
+	@echo "========================================================"
+	@echo "  ALL DONE"
+	@echo "  compile log : class_compile.log"
+	@echo "  sim log     : class_sim.log"
+	@echo "  coverage    : class_cov_report/"
+	@echo "  waveform    : novas_class.fsdb  (run: make wave)"
+	@echo "========================================================"
+
+# ── Open Verdi waveform ───────────────────────────────────────────────────────
+wave:
+	$(VERDI) -ssf novas_class.fsdb &
+
+# ── Coverage report only (if sim already ran) ────────────────────────────────
+cov:
+	urg -dir $(COV_DIR) -format both -report class_cov_report
+	@echo "Coverage report generated in class_cov_report/"
+
+# ── Clean all generated files ─────────────────────────────────────────────────
+clean:
+	rm -rf $(SIMV) $(SIMV).daidir csrc ucli.key  \
+	       *.log *.fsdb *.fsdb.*                  \
+	       verdiLog novas* urgReport              \
+	       $(COV_DIR) class_cov_report            \
+	       .vcs_lib_lock

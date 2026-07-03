@@ -1,0 +1,1079 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2_Full64; Runtime version V-2023.12-SP2_Full64;  May 28 21:14 2026
+
+ VCS Coverage Metrics Release V-2023.12-SP2_Full64 Copyright (c) 1991-2023 by Synopsys Inc.
+*Verdi* Loading libsscore_vcs202312.so
+FSDB Dumper for VCS, Release Verdi_X-2025.06-SP2-1, Linux x86_64/64bit, 01/19/2026
+(C) 1996 - 2026 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'novas_class.fsdb'
+*Verdi* : Begin traversing the scope (tb_class_mm_accelerator), layer (0).
+*Verdi* : End of traversing.
+[TB_TOP]    Asserting reset for 5 cycles
+[TB_TOP]    Reset released — launching environment
+[ENV]       Starting verification environment (20 tests)
+
+[GENERATOR] burst_id=1 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=1 | A and B matrices:
+[TRANSACTION]   A[0]=[ 10  10  10  10 ] B[0]=[ 10  10  10  10 ]
+[TRANSACTION]   A[1]=[ 10  10  10  10 ] B[1]=[ 10  10  10  10 ]
+[TRANSACTION]   A[2]=[ 10  10  10  10 ] B[2]=[ 10  10  10  10 ]
+[TRANSACTION]   A[3]=[ 10  10  10  10 ] B[3]=[ 10  10  10  10 ]
+[TRANSACTION] burst_id=1 | Expected C:
+[TRANSACTION]   C[0]=[   400    400    400    400 ]
+[TRANSACTION]   C[1]=[   400    400    400    400 ]
+[TRANSACTION]   C[2]=[   400    400    400    400 ]
+[TRANSACTION]   C[3]=[   400    400    400    400 ]
+
+[GENERATOR] burst_id=2 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=2 | A and B matrices:
+[TRANSACTION]   A[0]=[100 100 100 100 ] B[0]=[100 100 100 100 ]
+[TRANSACTION]   A[1]=[100 100 100 100 ] B[1]=[100 100 100 100 ]
+[TRANSACTION]   A[2]=[100 100 100 100 ] B[2]=[100 100 100 100 ]
+[TRANSACTION]   A[3]=[100 100 100 100 ] B[3]=[100 100 100 100 ]
+[TRANSACTION] burst_id=2 | Expected C:
+[TRANSACTION]   C[0]=[ 40000  40000  40000  40000 ]
+[TRANSACTION]   C[1]=[ 40000  40000  40000  40000 ]
+[TRANSACTION]   C[2]=[ 40000  40000  40000  40000 ]
+[TRANSACTION]   C[3]=[ 40000  40000  40000  40000 ]
+
+[GENERATOR] burst_id=3 | Generated transaction (corner_mode=1)
+[TRANSACTION] burst_id=3 | A and B matrices:
+[TRANSACTION]   A[0]=[150 150 150 150 ] B[0]=[150 150 150 150 ]
+[TRANSACTION]   A[1]=[150 150 150 150 ] B[1]=[150 150 150 150 ]
+[TRANSACTION]   A[2]=[150 150 150 150 ] B[2]=[150 150 150 150 ]
+[TRANSACTION]   A[3]=[150 150 150 150 ] B[3]=[150 150 150 150 ]
+[TRANSACTION] burst_id=3 | Expected C:
+[TRANSACTION]   C[0]=[ 90000  90000  90000  90000 ]
+[TRANSACTION]   C[1]=[ 90000  90000  90000  90000 ]
+[TRANSACTION]   C[2]=[ 90000  90000  90000  90000 ]
+[TRANSACTION]   C[3]=[ 90000  90000  90000  90000 ]
+
+[GENERATOR] burst_id=4 | Generated transaction (corner_mode=1)
+[TRANSACTION] burst_id=4 | A and B matrices:
+[TRANSACTION]   A[0]=[200 200 200 200 ] B[0]=[200 200 200 200 ]
+[TRANSACTION]   A[1]=[200 200 200 200 ] B[1]=[200 200 200 200 ]
+[TRANSACTION]   A[2]=[200 200 200 200 ] B[2]=[200 200 200 200 ]
+[TRANSACTION]   A[3]=[200 200 200 200 ] B[3]=[200 200 200 200 ]
+[TRANSACTION] burst_id=4 | Expected C:
+[TRANSACTION]   C[0]=[160000 160000 160000 160000 ]
+[TRANSACTION]   C[1]=[160000 160000 160000 160000 ]
+[TRANSACTION]   C[2]=[160000 160000 160000 160000 ]
+[TRANSACTION]   C[3]=[160000 160000 160000 160000 ]
+
+[GENERATOR] burst_id=5 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=5 | A and B matrices:
+[TRANSACTION]   A[0]=[255 255 255 255 ] B[0]=[255 255 255 255 ]
+[TRANSACTION]   A[1]=[255 255 255 255 ] B[1]=[255 255 255 255 ]
+[TRANSACTION]   A[2]=[255 255 255 255 ] B[2]=[255 255 255 255 ]
+[TRANSACTION]   A[3]=[255 255 255 255 ] B[3]=[255 255 255 255 ]
+[TRANSACTION] burst_id=5 | Expected C:
+[TRANSACTION]   C[0]=[260100 260100 260100 260100 ]
+[TRANSACTION]   C[1]=[260100 260100 260100 260100 ]
+[TRANSACTION]   C[2]=[260100 260100 260100 260100 ]
+[TRANSACTION]   C[3]=[260100 260100 260100 260100 ]
+
+[GENERATOR] burst_id=6 | Generated transaction (corner_mode=2)
+[TRANSACTION] burst_id=6 | A and B matrices:
+[TRANSACTION]   A[0]=[  0   0   0   0 ] B[0]=[  0   0   0   0 ]
+[TRANSACTION]   A[1]=[  0   0   0   0 ] B[1]=[  0   0   0   0 ]
+[TRANSACTION]   A[2]=[  0   0   0   0 ] B[2]=[  0   0   0   0 ]
+[TRANSACTION]   A[3]=[  0   0   0   0 ] B[3]=[  0   0   0   0 ]
+[TRANSACTION] burst_id=6 | Expected C:
+[TRANSACTION]   C[0]=[     0      0      0      0 ]
+[TRANSACTION]   C[1]=[     0      0      0      0 ]
+[TRANSACTION]   C[2]=[     0      0      0      0 ]
+[TRANSACTION]   C[3]=[     0      0      0      0 ]
+
+[GENERATOR] burst_id=7 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=7 | A and B matrices:
+[TRANSACTION]   A[0]=[  1   0   0   0 ] B[0]=[100 158 235  83 ]
+[TRANSACTION]   A[1]=[  0   1   0   0 ] B[1]=[ 83 105  17 139 ]
+[TRANSACTION]   A[2]=[  0   0   1   0 ] B[2]=[154 111 254  67 ]
+[TRANSACTION]   A[3]=[  0   0   0   1 ] B[3]=[241 175 238 163 ]
+[TRANSACTION] burst_id=7 | Expected C:
+[TRANSACTION]   C[0]=[   100    158    235     83 ]
+[TRANSACTION]   C[1]=[    83    105     17    139 ]
+[TRANSACTION]   C[2]=[   154    111    254     67 ]
+[TRANSACTION]   C[3]=[   241    175    238    163 ]
+
+[GENERATOR] burst_id=8 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=8 | A and B matrices:
+[TRANSACTION]   A[0]=[  2   0   0   0 ] B[0]=[128   0   0   0 ]
+[TRANSACTION]   A[1]=[  0   0   0   0 ] B[1]=[  0   0   0   0 ]
+[TRANSACTION]   A[2]=[  0   0   0   0 ] B[2]=[  0   0   0   0 ]
+[TRANSACTION]   A[3]=[  0   0   0   0 ] B[3]=[  0   0   0   0 ]
+[TRANSACTION] burst_id=8 | Expected C:
+[TRANSACTION]   C[0]=[   256      0      0      0 ]
+[TRANSACTION]   C[1]=[     0      0      0      0 ]
+[TRANSACTION]   C[2]=[     0      0      0      0 ]
+[TRANSACTION]   C[3]=[     0      0      0      0 ]
+
+[GENERATOR] burst_id=9 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=9 | A and B matrices:
+[TRANSACTION]   A[0]=[ 20 106  33 133 ] B[0]=[ 94  19 184  86 ]
+[TRANSACTION]   A[1]=[ 38  35  73  40 ] B[1]=[224 141 147 227 ]
+[TRANSACTION]   A[2]=[ 90 239 210  63 ] B[2]=[ 86  66 224 203 ]
+[TRANSACTION]   A[3]=[118 193 109  65 ] B[3]=[141 227 144 130 ]
+[TRANSACTION] burst_id=9 | Expected C:
+[TRANSACTION]   C[0]=[ 47215  47695  45806  49771 ]
+[TRANSACTION]   C[1]=[ 23330  19555  34249  31232 ]
+[TRANSACTION]   C[2]=[ 88939  63570 107805 112813 ]
+[TRANSACTION]   C[3]=[ 72863  51404  83859  84536 ]
+
+[GENERATOR] burst_id=10 | Generated transaction (corner_mode=2)
+[TRANSACTION] burst_id=10 | A and B matrices:
+[TRANSACTION]   A[0]=[  1   0   0   0 ] B[0]=[135 139 232 129 ]
+[TRANSACTION]   A[1]=[  0   1   0   0 ] B[1]=[255 155  82  19 ]
+[TRANSACTION]   A[2]=[  0   0   1   0 ] B[2]=[144 251  92  97 ]
+[TRANSACTION]   A[3]=[  0   0   0   1 ] B[3]=[198 151  97 227 ]
+[TRANSACTION] burst_id=10 | Expected C:
+[TRANSACTION]   C[0]=[   135    139    232    129 ]
+[TRANSACTION]   C[1]=[   255    155     82     19 ]
+[TRANSACTION]   C[2]=[   144    251     92     97 ]
+[TRANSACTION]   C[3]=[   198    151     97    227 ]
+
+[GENERATOR] burst_id=11 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=11 | A and B matrices:
+[TRANSACTION]   A[0]=[157 242  29 145 ] B[0]=[ 64  32 194 153 ]
+[TRANSACTION]   A[1]=[ 27   9  59 220 ] B[1]=[ 50 233  53 115 ]
+[TRANSACTION]   A[2]=[102 104  36 202 ] B[2]=[ 34 197 225 170 ]
+[TRANSACTION]   A[3]=[ 77 200  37  79 ] B[3]=[164 254 156 152 ]
+[TRANSACTION] burst_id=11 | Expected C:
+[TRANSACTION]   C[0]=[ 46914 103953  72429  78821 ]
+[TRANSACTION]   C[1]=[ 40264  70464  53310  48636 ]
+[TRANSACTION]   C[2]=[ 46080  85896  64912  64390 ]
+[TRANSACTION]   C[3]=[ 29142  76419  46187  53079 ]
+
+[GENERATOR] burst_id=12 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=12 | A and B matrices:
+[TRANSACTION]   A[0]=[139  25   7 201 ] B[0]=[112 230 154 166 ]
+[TRANSACTION]   A[1]=[  9 111 202 109 ] B[1]=[173  74   4 231 ]
+[TRANSACTION]   A[2]=[ 61  18 216 140 ] B[2]=[102  99  92  97 ]
+[TRANSACTION]   A[3]=[103 201 214  77 ] B[3]=[252  88  54  82 ]
+[TRANSACTION] burst_id=12 | Expected C:
+[TRANSACTION]   C[0]=[ 71259  52201  33004  46010 ]
+[TRANSACTION]   C[1]=[ 68283  39874  26300  55667 ]
+[TRANSACTION]   C[2]=[ 67258  49066  36898  46716 ]
+[TRANSACTION]   C[3]=[ 87541  66526  40512  90601 ]
+
+[GENERATOR] burst_id=13 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=13 | A and B matrices:
+[TRANSACTION]   A[0]=[140  36  18  48 ] B[0]=[ 39 224 198 124 ]
+[TRANSACTION]   A[1]=[ 70  34   6  48 ] B[1]=[ 41 128 125 244 ]
+[TRANSACTION]   A[2]=[245  86  56 183 ] B[2]=[135  37  97 199 ]
+[TRANSACTION]   A[3]=[212 251 137 248 ] B[3]=[152 183  87  59 ]
+[TRANSACTION] burst_id=13 | Expected C:
+[TRANSACTION]   C[0]=[ 16662  45418  38142  32558 ]
+[TRANSACTION]   C[1]=[ 12230  29038  22868  21002 ]
+[TRANSACTION]   C[2]=[ 48457 101449  80613  73305 ]
+[TRANSACTION]   C[3]=[ 74750 130069 108216 129427 ]
+
+[GENERATOR] burst_id=14 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=14 | A and B matrices:
+[TRANSACTION]   A[0]=[199 107 179 188 ] B[0]=[135 230 247 156 ]
+[TRANSACTION]   A[1]=[244 176 179  73 ] B[1]=[ 52 110  80  94 ]
+[TRANSACTION]   A[2]=[218 197  63 245 ] B[2]=[ 93  23 119 127 ]
+[TRANSACTION]   A[3]=[249  32 237 207 ] B[3]=[247  52 173  58 ]
+[TRANSACTION] burst_id=14 | Expected C:
+[TRANSACTION]   C[0]=[ 95512  71433 111538  74739 ]
+[TRANSACTION]   C[1]=[ 76770  83393 108278  81575 ]
+[TRANSACTION]   C[2]=[106048  85999 119488  74737 ]
+[TRANSACTION]   C[3]=[108449  77005 128077  83957 ]
+
+[GENERATOR] burst_id=15 | Generated transaction (corner_mode=2)
+[TRANSACTION] burst_id=15 | A and B matrices:
+[TRANSACTION]   A[0]=[  1   0   0   0 ] B[0]=[172 181  46 210 ]
+[TRANSACTION]   A[1]=[  0   1   0   0 ] B[1]=[ 85  52 199  20 ]
+[TRANSACTION]   A[2]=[  0   0   1   0 ] B[2]=[125 202 209  63 ]
+[TRANSACTION]   A[3]=[  0   0   0   1 ] B[3]=[218  97 103 139 ]
+[TRANSACTION] burst_id=15 | Expected C:
+[TRANSACTION]   C[0]=[   172    181     46    210 ]
+[TRANSACTION]   C[1]=[    85     52    199     20 ]
+[TRANSACTION]   C[2]=[   125    202    209     63 ]
+[TRANSACTION]   C[3]=[   218     97    103    139 ]
+
+[GENERATOR] burst_id=16 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=16 | A and B matrices:
+[TRANSACTION]   A[0]=[ 42 227 225   7 ] B[0]=[178 134 249  16 ]
+[TRANSACTION]   A[1]=[107 141   8 134 ] B[1]=[238  86 106  20 ]
+[TRANSACTION]   A[2]=[ 22 147 196   4 ] B[2]=[233  89  71 167 ]
+[TRANSACTION]   A[3]=[ 18 231  85 253 ] B[3]=[143   5 208  39 ]
+[TRANSACTION] burst_id=16 | Expected C:
+[TRANSACTION]   C[0]=[114928  45210  51951  43060 ]
+[TRANSACTION]   C[1]=[ 73630  27846  70029  11094 ]
+[TRANSACTION]   C[2]=[ 85142  33054  35808  36180 ]
+[TRANSACTION]   C[3]=[114166  31108  87627  28970 ]
+
+[GENERATOR] burst_id=17 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=17 | A and B matrices:
+[TRANSACTION]   A[0]=[159  35 129  35 ] B[0]=[159 244 102  24 ]
+[TRANSACTION]   A[1]=[ 98 163  86  62 ] B[1]=[  0 190 213  59 ]
+[TRANSACTION]   A[2]=[153 227  71  78 ] B[2]=[ 18  24  72  75 ]
+[TRANSACTION]   A[3]=[ 16 188 202 187 ] B[3]=[ 85 244 222  44 ]
+[TRANSACTION] burst_id=17 | Expected C:
+[TRANSACTION]   C[0]=[ 30578  57082  40731  17096 ]
+[TRANSACTION]   C[1]=[ 22400  72074  64671  21147 ]
+[TRANSACTION]   C[2]=[ 32235 101198  86385  25822 ]
+[TRANSACTION]   C[3]=[ 22075  90100  97734  34854 ]
+
+[GENERATOR] burst_id=18 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=18 | A and B matrices:
+[TRANSACTION]   A[0]=[194 248  41 138 ] B[0]=[ 98 255 129  55 ]
+[TRANSACTION]   A[1]=[253 146 135 130 ] B[1]=[186 114  48 120 ]
+[TRANSACTION]   A[2]=[125  63  71  70 ] B[2]=[140  56  95  42 ]
+[TRANSACTION]   A[3]=[ 54 148  82 181 ] B[3]=[248 177  59  65 ]
+[TRANSACTION] burst_id=18 | Expected C:
+[TRANSACTION]   C[0]=[105104 104464  48967  51122 ]
+[TRANSACTION]   C[1]=[103090 111729  60140  45555 ]
+[TRANSACTION]   C[2]=[ 51268  55423  30024  21967 ]
+[TRANSACTION]   C[3]=[ 89188  67271  32539  35939 ]
+
+[GENERATOR] burst_id=19 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=19 | A and B matrices:
+[TRANSACTION]   A[0]=[ 96  34 158 229 ] B[0]=[209 183 133 215 ]
+[TRANSACTION]   A[1]=[111 237 176 155 ] B[1]=[ 93 242 168 118 ]
+[TRANSACTION]   A[2]=[156 225   3 193 ] B[2]=[249 219 180 155 ]
+[TRANSACTION]   A[3]=[196 190  66 246 ] B[3]=[169 241  92 145 ]
+[TRANSACTION] burst_id=19 | Expected C:
+[TRANSACTION]   C[0]=[101269 115587  67988  82347 ]
+[TRANSACTION]   C[1]=[115259 153566 100519 101586 ]
+[TRANSACTION]   C[2]=[ 86893 130168  76844  88540 ]
+[TRANSACTION]   C[3]=[116642 155588  92500 110460 ]
+
+[GENERATOR] burst_id=20 | Generated transaction (corner_mode=0)
+[TRANSACTION] burst_id=20 | A and B matrices:
+[TRANSACTION]   A[0]=[ 54  53 223 252 ] B[0]=[ 99 244 214  92 ]
+[TRANSACTION]   A[1]=[200 235 133 227 ] B[1]=[178 138  48 177 ]
+[TRANSACTION]   A[2]=[112  33  37  72 ] B[2]=[ 57 131 145 115 ]
+[TRANSACTION]   A[3]=[173 124 221   5 ] B[3]=[ 47 180  67 123 ]
+[TRANSACTION] burst_id=20 | Expected C:
+[TRANSACTION]   C[0]=[ 39335  95063  63319  70990 ]
+[TRANSACTION]   C[1]=[ 79880 139513  88574 103211 ]
+[TRANSACTION]   C[2]=[ 22455  49689  35741  29256 ]
+[TRANSACTION]   C[3]=[ 52031  89175  75354  63894 ]
+[GENERATOR] All 20 transactions generated.
+[DRIVER]    burst_id=1 | Driving transaction to DUT
+[DRIVER]    burst_id=1 | start asserted
+[iMon]      burst_id=1 | start detected — new transaction beginning
+[DRIVER]    burst_id=1 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=1 | Cycle0 — a_in=0xa0a0a0a  b_in=0xa0a0a0a  valid_in=1
+[iMon]      burst_id=1 | valid_in_upstream=1  a_in=0xa0a0a0a  b_in=0xa0a0a0a
+[DRIVER]    burst_id=1 | Cycle1 — a_in=0xa0a0a0a  b_in=0xa0a0a0a  valid_in=1
+[iMon]      burst_id=1 | valid_in_upstream=1  a_in=0xa0a0a0a  b_in=0xa0a0a0a
+[DRIVER]    burst_id=1 | Cycle2 — a_in=0xa0a0a0a  b_in=0xa0a0a0a  valid_in=1
+[iMon]      burst_id=1 | valid_in_upstream=1  a_in=0xa0a0a0a  b_in=0xa0a0a0a
+[DRIVER]    burst_id=1 | Cycle3 — a_in=0xa0a0a0a  b_in=0xa0a0a0a  valid_in=1
+[iMon]      burst_id=1 | valid_in_upstream=1  a_in=0xa0a0a0a  b_in=0xa0a0a0a
+[DRIVER]    burst_id=1 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=2 | Driving transaction to DUT
+[iMon]      burst_id=1 | result_valid pulse observed on DUT output
+[oMon]      burst_id=1 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[   400    400    400    400 ]
+[oMon]        got_C[1]=[   400    400    400    400 ]
+[oMon]        got_C[2]=[   400    400    400    400 ]
+[oMon]        got_C[3]=[   400    400    400    400 ]
+
+[SCB]       burst_id=1 | Checking transaction
+[SCB]       burst_id=1 | C[0][0] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[0][1] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[0][2] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[0][3] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[1][0] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[1][1] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[1][2] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[1][3] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[2][0] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[2][1] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[2][2] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[2][3] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[3][0] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[3][1] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[3][2] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | C[3][3] MATCH      exp=400  got=400
+[SCB]       burst_id=1 | Transaction PASSED
+[DRIVER]    burst_id=2 | start asserted
+[iMon]      burst_id=2 | start detected — new transaction beginning
+[DRIVER]    burst_id=2 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=2 | Cycle0 — a_in=0x64646464  b_in=0x64646464  valid_in=1
+[iMon]      burst_id=2 | valid_in_upstream=1  a_in=0x64646464  b_in=0x64646464
+[DRIVER]    burst_id=2 | Cycle1 — a_in=0x64646464  b_in=0x64646464  valid_in=1
+[iMon]      burst_id=2 | valid_in_upstream=1  a_in=0x64646464  b_in=0x64646464
+[DRIVER]    burst_id=2 | Cycle2 — a_in=0x64646464  b_in=0x64646464  valid_in=1
+[iMon]      burst_id=2 | valid_in_upstream=1  a_in=0x64646464  b_in=0x64646464
+[DRIVER]    burst_id=2 | Cycle3 — a_in=0x64646464  b_in=0x64646464  valid_in=1
+[iMon]      burst_id=2 | valid_in_upstream=1  a_in=0x64646464  b_in=0x64646464
+[DRIVER]    burst_id=2 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=3 | Driving transaction to DUT
+[iMon]      burst_id=2 | result_valid pulse observed on DUT output
+[oMon]      burst_id=2 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 40000  40000  40000  40000 ]
+[oMon]        got_C[1]=[ 40000  40000  40000  40000 ]
+[oMon]        got_C[2]=[ 40000  40000  40000  40000 ]
+[oMon]        got_C[3]=[ 40000  40000  40000  40000 ]
+
+[SCB]       burst_id=2 | Checking transaction
+[SCB]       burst_id=2 | C[0][0] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[0][1] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[0][2] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[0][3] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[1][0] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[1][1] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[1][2] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[1][3] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[2][0] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[2][1] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[2][2] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[2][3] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[3][0] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[3][1] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[3][2] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | C[3][3] MATCH      exp=40000  got=40000
+[SCB]       burst_id=2 | Transaction PASSED
+[DRIVER]    burst_id=3 | start asserted
+[iMon]      burst_id=3 | start detected — new transaction beginning
+[DRIVER]    burst_id=3 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=3 | Cycle0 — a_in=0x96969696  b_in=0x96969696  valid_in=1
+[iMon]      burst_id=3 | valid_in_upstream=1  a_in=0x96969696  b_in=0x96969696
+[DRIVER]    burst_id=3 | Cycle1 — a_in=0x96969696  b_in=0x96969696  valid_in=1
+[iMon]      burst_id=3 | valid_in_upstream=1  a_in=0x96969696  b_in=0x96969696
+[DRIVER]    burst_id=3 | Cycle2 — a_in=0x96969696  b_in=0x96969696  valid_in=1
+[iMon]      burst_id=3 | valid_in_upstream=1  a_in=0x96969696  b_in=0x96969696
+[DRIVER]    burst_id=3 | Cycle3 — a_in=0x96969696  b_in=0x96969696  valid_in=1
+[iMon]      burst_id=3 | valid_in_upstream=1  a_in=0x96969696  b_in=0x96969696
+[DRIVER]    burst_id=3 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=4 | Driving transaction to DUT
+[iMon]      burst_id=3 | result_valid pulse observed on DUT output
+[oMon]      burst_id=3 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 90000  90000  90000  90000 ]
+[oMon]        got_C[1]=[ 90000  90000  90000  90000 ]
+[oMon]        got_C[2]=[ 90000  90000  90000  90000 ]
+[oMon]        got_C[3]=[ 90000  90000  90000  90000 ]
+
+[SCB]       burst_id=3 | Checking transaction
+[SCB]       burst_id=3 | C[0][0] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[0][1] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[0][2] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[0][3] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[1][0] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[1][1] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[1][2] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[1][3] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[2][0] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[2][1] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[2][2] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[2][3] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[3][0] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[3][1] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[3][2] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | C[3][3] MATCH      exp=90000  got=90000
+[SCB]       burst_id=3 | Transaction PASSED
+[DRIVER]    burst_id=4 | start asserted
+[iMon]      burst_id=4 | start detected — new transaction beginning
+[DRIVER]    burst_id=4 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=4 | Cycle0 — a_in=0xc8c8c8c8  b_in=0xc8c8c8c8  valid_in=1
+[iMon]      burst_id=4 | valid_in_upstream=1  a_in=0xc8c8c8c8  b_in=0xc8c8c8c8
+[DRIVER]    burst_id=4 | Cycle1 — a_in=0xc8c8c8c8  b_in=0xc8c8c8c8  valid_in=1
+[iMon]      burst_id=4 | valid_in_upstream=1  a_in=0xc8c8c8c8  b_in=0xc8c8c8c8
+[DRIVER]    burst_id=4 | Cycle2 — a_in=0xc8c8c8c8  b_in=0xc8c8c8c8  valid_in=1
+[iMon]      burst_id=4 | valid_in_upstream=1  a_in=0xc8c8c8c8  b_in=0xc8c8c8c8
+[DRIVER]    burst_id=4 | Cycle3 — a_in=0xc8c8c8c8  b_in=0xc8c8c8c8  valid_in=1
+[iMon]      burst_id=4 | valid_in_upstream=1  a_in=0xc8c8c8c8  b_in=0xc8c8c8c8
+[DRIVER]    burst_id=4 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=5 | Driving transaction to DUT
+[iMon]      burst_id=4 | result_valid pulse observed on DUT output
+[oMon]      burst_id=4 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[160000 160000 160000 160000 ]
+[oMon]        got_C[1]=[160000 160000 160000 160000 ]
+[oMon]        got_C[2]=[160000 160000 160000 160000 ]
+[oMon]        got_C[3]=[160000 160000 160000 160000 ]
+
+[SCB]       burst_id=4 | Checking transaction
+[SCB]       burst_id=4 | C[0][0] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[0][1] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[0][2] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[0][3] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[1][0] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[1][1] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[1][2] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[1][3] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[2][0] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[2][1] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[2][2] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[2][3] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[3][0] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[3][1] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[3][2] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | C[3][3] MATCH      exp=160000  got=160000
+[SCB]       burst_id=4 | Transaction PASSED
+[DRIVER]    burst_id=5 | start asserted
+[iMon]      burst_id=5 | start detected — new transaction beginning
+[DRIVER]    burst_id=5 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=5 | Cycle0 — a_in=0xffffffff  b_in=0xffffffff  valid_in=1
+[iMon]      burst_id=5 | valid_in_upstream=1  a_in=0xffffffff  b_in=0xffffffff
+[DRIVER]    burst_id=5 | Cycle1 — a_in=0xffffffff  b_in=0xffffffff  valid_in=1
+[iMon]      burst_id=5 | valid_in_upstream=1  a_in=0xffffffff  b_in=0xffffffff
+[DRIVER]    burst_id=5 | Cycle2 — a_in=0xffffffff  b_in=0xffffffff  valid_in=1
+[iMon]      burst_id=5 | valid_in_upstream=1  a_in=0xffffffff  b_in=0xffffffff
+[DRIVER]    burst_id=5 | Cycle3 — a_in=0xffffffff  b_in=0xffffffff  valid_in=1
+[iMon]      burst_id=5 | valid_in_upstream=1  a_in=0xffffffff  b_in=0xffffffff
+[DRIVER]    burst_id=5 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=6 | Driving transaction to DUT
+[iMon]      burst_id=5 | result_valid pulse observed on DUT output
+[oMon]      burst_id=5 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[260100 260100 260100 260100 ]
+[oMon]        got_C[1]=[260100 260100 260100 260100 ]
+[oMon]        got_C[2]=[260100 260100 260100 260100 ]
+[oMon]        got_C[3]=[260100 260100 260100 260100 ]
+
+[SCB]       burst_id=5 | Checking transaction
+[SCB]       burst_id=5 | C[0][0] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[0][1] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[0][2] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[0][3] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[1][0] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[1][1] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[1][2] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[1][3] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[2][0] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[2][1] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[2][2] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[2][3] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[3][0] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[3][1] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[3][2] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | C[3][3] MATCH      exp=260100  got=260100
+[SCB]       burst_id=5 | Transaction PASSED
+[DRIVER]    burst_id=6 | start asserted
+[iMon]      burst_id=6 | start detected — new transaction beginning
+[DRIVER]    burst_id=6 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=6 | Cycle0 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=6 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=6 | Cycle1 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=6 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=6 | Cycle2 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=6 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=6 | Cycle3 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=6 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=6 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=7 | Driving transaction to DUT
+[iMon]      burst_id=6 | result_valid pulse observed on DUT output
+[oMon]      burst_id=6 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[     0      0      0      0 ]
+[oMon]        got_C[1]=[     0      0      0      0 ]
+[oMon]        got_C[2]=[     0      0      0      0 ]
+[oMon]        got_C[3]=[     0      0      0      0 ]
+
+[SCB]       burst_id=6 | Checking transaction
+[SCB]       burst_id=6 | C[0][0] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[0][1] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[0][2] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[0][3] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[1][0] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[1][1] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[1][2] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[1][3] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[2][0] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[2][1] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[2][2] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[2][3] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[3][0] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[3][1] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[3][2] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | C[3][3] MATCH      exp=0  got=0
+[SCB]       burst_id=6 | Transaction PASSED
+[DRIVER]    burst_id=7 | start asserted
+[iMon]      burst_id=7 | start detected — new transaction beginning
+[DRIVER]    burst_id=7 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=7 | Cycle0 — a_in=0x1  b_in=0x53eb9e64  valid_in=1
+[iMon]      burst_id=7 | valid_in_upstream=1  a_in=0x1  b_in=0x53eb9e64
+[DRIVER]    burst_id=7 | Cycle1 — a_in=0x100  b_in=0x8b116953  valid_in=1
+[iMon]      burst_id=7 | valid_in_upstream=1  a_in=0x100  b_in=0x8b116953
+[DRIVER]    burst_id=7 | Cycle2 — a_in=0x10000  b_in=0x43fe6f9a  valid_in=1
+[iMon]      burst_id=7 | valid_in_upstream=1  a_in=0x10000  b_in=0x43fe6f9a
+[DRIVER]    burst_id=7 | Injecting 1-cycle pipeline stall for coverage
+[DRIVER]    burst_id=7 | Cycle3 — a_in=0x1000000  b_in=0xa3eeaff1  valid_in=1
+[iMon]      burst_id=7 | valid_in_upstream=1  a_in=0x1000000  b_in=0xa3eeaff1
+[DRIVER]    burst_id=7 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=8 | Driving transaction to DUT
+[iMon]      burst_id=7 | result_valid pulse observed on DUT output
+[oMon]      burst_id=7 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[   100    158    235     83 ]
+[oMon]        got_C[1]=[    83    105     17    139 ]
+[oMon]        got_C[2]=[   154    111    254     67 ]
+[oMon]        got_C[3]=[   241    175    238    163 ]
+
+[SCB]       burst_id=7 | Checking transaction
+[SCB]       burst_id=7 | C[0][0] MATCH      exp=100  got=100
+[SCB]       burst_id=7 | C[0][1] MATCH      exp=158  got=158
+[SCB]       burst_id=7 | C[0][2] MATCH      exp=235  got=235
+[SCB]       burst_id=7 | C[0][3] MATCH      exp=83  got=83
+[SCB]       burst_id=7 | C[1][0] MATCH      exp=83  got=83
+[SCB]       burst_id=7 | C[1][1] MATCH      exp=105  got=105
+[SCB]       burst_id=7 | C[1][2] MATCH      exp=17  got=17
+[SCB]       burst_id=7 | C[1][3] MATCH      exp=139  got=139
+[SCB]       burst_id=7 | C[2][0] MATCH      exp=154  got=154
+[SCB]       burst_id=7 | C[2][1] MATCH      exp=111  got=111
+[SCB]       burst_id=7 | C[2][2] MATCH      exp=254  got=254
+[SCB]       burst_id=7 | C[2][3] MATCH      exp=67  got=67
+[SCB]       burst_id=7 | C[3][0] MATCH      exp=241  got=241
+[SCB]       burst_id=7 | C[3][1] MATCH      exp=175  got=175
+[SCB]       burst_id=7 | C[3][2] MATCH      exp=238  got=238
+[SCB]       burst_id=7 | C[3][3] MATCH      exp=163  got=163
+[SCB]       burst_id=7 | Transaction PASSED
+[DRIVER]    burst_id=8 | Injecting valid_in=1 during IDLE for condition coverage
+[iMon]      burst_id=7 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=8 | start asserted
+[iMon]      burst_id=8 | start detected — new transaction beginning
+[DRIVER]    burst_id=8 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=8 | Cycle0 — a_in=0x2  b_in=0x80  valid_in=1
+[iMon]      burst_id=8 | valid_in_upstream=1  a_in=0x2  b_in=0x80
+[DRIVER]    burst_id=8 | Cycle1 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=8 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=8 | Cycle2 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=8 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=8 | Cycle3 — a_in=0x0  b_in=0x0  valid_in=1
+[iMon]      burst_id=8 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[DRIVER]    burst_id=8 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=9 | Driving transaction to DUT
+[iMon]      burst_id=8 | result_valid pulse observed on DUT output
+[oMon]      burst_id=8 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[   256      0      0      0 ]
+[oMon]        got_C[1]=[     0      0      0      0 ]
+[oMon]        got_C[2]=[     0      0      0      0 ]
+[oMon]        got_C[3]=[     0      0      0      0 ]
+
+[SCB]       burst_id=8 | Checking transaction
+[SCB]       burst_id=8 | C[0][0] MATCH      exp=256  got=256
+[SCB]       burst_id=8 | C[0][1] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[0][2] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[0][3] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[1][0] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[1][1] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[1][2] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[1][3] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[2][0] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[2][1] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[2][2] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[2][3] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[3][0] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[3][1] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[3][2] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | C[3][3] MATCH      exp=0  got=0
+[SCB]       burst_id=8 | Transaction PASSED
+[DRIVER]    burst_id=9 | start asserted
+[iMon]      burst_id=9 | start detected — new transaction beginning
+[DRIVER]    burst_id=9 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=9 | Cycle0 — a_in=0x765a2614  b_in=0x56b8135e  valid_in=1
+[iMon]      burst_id=9 | valid_in_upstream=1  a_in=0x765a2614  b_in=0x56b8135e
+[DRIVER]    burst_id=9 | Cycle1 — a_in=0xc1ef236a  b_in=0xe3938de0  valid_in=1
+[iMon]      burst_id=9 | valid_in_upstream=1  a_in=0xc1ef236a  b_in=0xe3938de0
+[DRIVER]    burst_id=9 | Cycle2 — a_in=0x6dd24921  b_in=0xcbe04256  valid_in=1
+[iMon]      burst_id=9 | valid_in_upstream=1  a_in=0x6dd24921  b_in=0xcbe04256
+[DRIVER]    burst_id=9 | Cycle3 — a_in=0x413f2885  b_in=0x8290e38d  valid_in=1
+[iMon]      burst_id=9 | valid_in_upstream=1  a_in=0x413f2885  b_in=0x8290e38d
+[DRIVER]    burst_id=9 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=10 | Driving transaction to DUT
+[iMon]      burst_id=9 | result_valid pulse observed on DUT output
+[oMon]      burst_id=9 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 47215  47695  45806  49771 ]
+[oMon]        got_C[1]=[ 23330  19555  34249  31232 ]
+[oMon]        got_C[2]=[ 88939  63570 107805 112813 ]
+[oMon]        got_C[3]=[ 72863  51404  83859  84536 ]
+
+[SCB]       burst_id=9 | Checking transaction
+[SCB]       burst_id=9 | C[0][0] MATCH      exp=47215  got=47215
+[SCB]       burst_id=9 | C[0][1] MATCH      exp=47695  got=47695
+[SCB]       burst_id=9 | C[0][2] MATCH      exp=45806  got=45806
+[SCB]       burst_id=9 | C[0][3] MATCH      exp=49771  got=49771
+[SCB]       burst_id=9 | C[1][0] MATCH      exp=23330  got=23330
+[SCB]       burst_id=9 | C[1][1] MATCH      exp=19555  got=19555
+[SCB]       burst_id=9 | C[1][2] MATCH      exp=34249  got=34249
+[SCB]       burst_id=9 | C[1][3] MATCH      exp=31232  got=31232
+[SCB]       burst_id=9 | C[2][0] MATCH      exp=88939  got=88939
+[SCB]       burst_id=9 | C[2][1] MATCH      exp=63570  got=63570
+[SCB]       burst_id=9 | C[2][2] MATCH      exp=107805  got=107805
+[SCB]       burst_id=9 | C[2][3] MATCH      exp=112813  got=112813
+[SCB]       burst_id=9 | C[3][0] MATCH      exp=72863  got=72863
+[SCB]       burst_id=9 | C[3][1] MATCH      exp=51404  got=51404
+[SCB]       burst_id=9 | C[3][2] MATCH      exp=83859  got=83859
+[SCB]       burst_id=9 | C[3][3] MATCH      exp=84536  got=84536
+[SCB]       burst_id=9 | Transaction PASSED
+[DRIVER]    burst_id=10 | start asserted
+[iMon]      burst_id=10 | start detected — new transaction beginning
+[DRIVER]    burst_id=10 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=10 | Cycle0 — a_in=0x1  b_in=0x81e88b87  valid_in=1
+[iMon]      burst_id=10 | valid_in_upstream=1  a_in=0x1  b_in=0x81e88b87
+[DRIVER]    burst_id=10 | Cycle1 — a_in=0x100  b_in=0x13529bff  valid_in=1
+[iMon]      burst_id=10 | valid_in_upstream=1  a_in=0x100  b_in=0x13529bff
+[DRIVER]    burst_id=10 | Cycle2 — a_in=0x10000  b_in=0x615cfb90  valid_in=1
+[iMon]      burst_id=10 | valid_in_upstream=1  a_in=0x10000  b_in=0x615cfb90
+[DRIVER]    burst_id=10 | Cycle3 — a_in=0x1000000  b_in=0xe36197c6  valid_in=1
+[iMon]      burst_id=10 | valid_in_upstream=1  a_in=0x1000000  b_in=0xe36197c6
+[DRIVER]    burst_id=10 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=11 | Driving transaction to DUT
+[iMon]      burst_id=10 | result_valid pulse observed on DUT output
+[oMon]      burst_id=10 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[   135    139    232    129 ]
+[oMon]        got_C[1]=[   255    155     82     19 ]
+[oMon]        got_C[2]=[   144    251     92     97 ]
+[oMon]        got_C[3]=[   198    151     97    227 ]
+
+[SCB]       burst_id=10 | Checking transaction
+[SCB]       burst_id=10 | C[0][0] MATCH      exp=135  got=135
+[SCB]       burst_id=10 | C[0][1] MATCH      exp=139  got=139
+[SCB]       burst_id=10 | C[0][2] MATCH      exp=232  got=232
+[SCB]       burst_id=10 | C[0][3] MATCH      exp=129  got=129
+[SCB]       burst_id=10 | C[1][0] MATCH      exp=255  got=255
+[SCB]       burst_id=10 | C[1][1] MATCH      exp=155  got=155
+[SCB]       burst_id=10 | C[1][2] MATCH      exp=82  got=82
+[SCB]       burst_id=10 | C[1][3] MATCH      exp=19  got=19
+[SCB]       burst_id=10 | C[2][0] MATCH      exp=144  got=144
+[SCB]       burst_id=10 | C[2][1] MATCH      exp=251  got=251
+[SCB]       burst_id=10 | C[2][2] MATCH      exp=92  got=92
+[SCB]       burst_id=10 | C[2][3] MATCH      exp=97  got=97
+[SCB]       burst_id=10 | C[3][0] MATCH      exp=198  got=198
+[SCB]       burst_id=10 | C[3][1] MATCH      exp=151  got=151
+[SCB]       burst_id=10 | C[3][2] MATCH      exp=97  got=97
+[SCB]       burst_id=10 | C[3][3] MATCH      exp=227  got=227
+[SCB]       burst_id=10 | Transaction PASSED
+[DRIVER]    burst_id=11 | start asserted
+[iMon]      burst_id=11 | start detected — new transaction beginning
+[DRIVER]    burst_id=11 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=11 | Cycle0 — a_in=0x4d661b9d  b_in=0x99c22040  valid_in=1
+[iMon]      burst_id=11 | valid_in_upstream=1  a_in=0x4d661b9d  b_in=0x99c22040
+[DRIVER]    burst_id=11 | Cycle1 — a_in=0xc86809f2  b_in=0x7335e932  valid_in=1
+[iMon]      burst_id=11 | valid_in_upstream=1  a_in=0xc86809f2  b_in=0x7335e932
+[DRIVER]    burst_id=11 | Cycle2 — a_in=0x25243b1d  b_in=0xaae1c522  valid_in=1
+[iMon]      burst_id=11 | valid_in_upstream=1  a_in=0x25243b1d  b_in=0xaae1c522
+[DRIVER]    burst_id=11 | Cycle3 — a_in=0x4fcadc91  b_in=0x989cfea4  valid_in=1
+[iMon]      burst_id=11 | valid_in_upstream=1  a_in=0x4fcadc91  b_in=0x989cfea4
+[DRIVER]    burst_id=11 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=12 | Driving transaction to DUT
+[iMon]      burst_id=11 | result_valid pulse observed on DUT output
+[oMon]      burst_id=11 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 46914 103953  72429  78821 ]
+[oMon]        got_C[1]=[ 40264  70464  53310  48636 ]
+[oMon]        got_C[2]=[ 46080  85896  64912  64390 ]
+[oMon]        got_C[3]=[ 29142  76419  46187  53079 ]
+
+[SCB]       burst_id=11 | Checking transaction
+[SCB]       burst_id=11 | C[0][0] MATCH      exp=46914  got=46914
+[SCB]       burst_id=11 | C[0][1] MATCH      exp=103953  got=103953
+[SCB]       burst_id=11 | C[0][2] MATCH      exp=72429  got=72429
+[SCB]       burst_id=11 | C[0][3] MATCH      exp=78821  got=78821
+[SCB]       burst_id=11 | C[1][0] MATCH      exp=40264  got=40264
+[SCB]       burst_id=11 | C[1][1] MATCH      exp=70464  got=70464
+[SCB]       burst_id=11 | C[1][2] MATCH      exp=53310  got=53310
+[SCB]       burst_id=11 | C[1][3] MATCH      exp=48636  got=48636
+[SCB]       burst_id=11 | C[2][0] MATCH      exp=46080  got=46080
+[SCB]       burst_id=11 | C[2][1] MATCH      exp=85896  got=85896
+[SCB]       burst_id=11 | C[2][2] MATCH      exp=64912  got=64912
+[SCB]       burst_id=11 | C[2][3] MATCH      exp=64390  got=64390
+[SCB]       burst_id=11 | C[3][0] MATCH      exp=29142  got=29142
+[SCB]       burst_id=11 | C[3][1] MATCH      exp=76419  got=76419
+[SCB]       burst_id=11 | C[3][2] MATCH      exp=46187  got=46187
+[SCB]       burst_id=11 | C[3][3] MATCH      exp=53079  got=53079
+[SCB]       burst_id=11 | Transaction PASSED
+[DRIVER]    burst_id=12 | start asserted
+[iMon]      burst_id=12 | start detected — new transaction beginning
+[DRIVER]    burst_id=12 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=12 | Cycle0 — a_in=0x673d098b  b_in=0xa69ae670  valid_in=1
+[iMon]      burst_id=12 | valid_in_upstream=1  a_in=0x673d098b  b_in=0xa69ae670
+[DRIVER]    burst_id=12 | Cycle1 — a_in=0xc9126f19  b_in=0xe7044aad  valid_in=1
+[iMon]      burst_id=12 | valid_in_upstream=1  a_in=0xc9126f19  b_in=0xe7044aad
+[DRIVER]    burst_id=12 | Cycle2 — a_in=0xd6d8ca07  b_in=0x615c6366  valid_in=1
+[iMon]      burst_id=12 | valid_in_upstream=1  a_in=0xd6d8ca07  b_in=0x615c6366
+[DRIVER]    burst_id=12 | Cycle3 — a_in=0x4d8c6dc9  b_in=0x523658fc  valid_in=1
+[iMon]      burst_id=12 | valid_in_upstream=1  a_in=0x4d8c6dc9  b_in=0x523658fc
+[DRIVER]    burst_id=12 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=13 | Driving transaction to DUT
+[iMon]      burst_id=12 | result_valid pulse observed on DUT output
+[oMon]      burst_id=12 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 71259  52201  33004  46010 ]
+[oMon]        got_C[1]=[ 68283  39874  26300  55667 ]
+[oMon]        got_C[2]=[ 67258  49066  36898  46716 ]
+[oMon]        got_C[3]=[ 87541  66526  40512  90601 ]
+
+[SCB]       burst_id=12 | Checking transaction
+[SCB]       burst_id=12 | C[0][0] MATCH      exp=71259  got=71259
+[SCB]       burst_id=12 | C[0][1] MATCH      exp=52201  got=52201
+[SCB]       burst_id=12 | C[0][2] MATCH      exp=33004  got=33004
+[SCB]       burst_id=12 | C[0][3] MATCH      exp=46010  got=46010
+[SCB]       burst_id=12 | C[1][0] MATCH      exp=68283  got=68283
+[SCB]       burst_id=12 | C[1][1] MATCH      exp=39874  got=39874
+[SCB]       burst_id=12 | C[1][2] MATCH      exp=26300  got=26300
+[SCB]       burst_id=12 | C[1][3] MATCH      exp=55667  got=55667
+[SCB]       burst_id=12 | C[2][0] MATCH      exp=67258  got=67258
+[SCB]       burst_id=12 | C[2][1] MATCH      exp=49066  got=49066
+[SCB]       burst_id=12 | C[2][2] MATCH      exp=36898  got=36898
+[SCB]       burst_id=12 | C[2][3] MATCH      exp=46716  got=46716
+[SCB]       burst_id=12 | C[3][0] MATCH      exp=87541  got=87541
+[SCB]       burst_id=12 | C[3][1] MATCH      exp=66526  got=66526
+[SCB]       burst_id=12 | C[3][2] MATCH      exp=40512  got=40512
+[SCB]       burst_id=12 | C[3][3] MATCH      exp=90601  got=90601
+[SCB]       burst_id=12 | Transaction PASSED
+[DRIVER]    burst_id=13 | start asserted
+[iMon]      burst_id=13 | start detected — new transaction beginning
+[DRIVER]    burst_id=13 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=13 | Cycle0 — a_in=0xd4f5468c  b_in=0x7cc6e027  valid_in=1
+[iMon]      burst_id=13 | valid_in_upstream=1  a_in=0xd4f5468c  b_in=0x7cc6e027
+[DRIVER]    burst_id=13 | Cycle1 — a_in=0xfb562224  b_in=0xf47d8029  valid_in=1
+[iMon]      burst_id=13 | valid_in_upstream=1  a_in=0xfb562224  b_in=0xf47d8029
+[DRIVER]    burst_id=13 | Cycle2 — a_in=0x89380612  b_in=0xc7612587  valid_in=1
+[iMon]      burst_id=13 | valid_in_upstream=1  a_in=0x89380612  b_in=0xc7612587
+[DRIVER]    burst_id=13 | Cycle3 — a_in=0xf8b73030  b_in=0x3b57b798  valid_in=1
+[iMon]      burst_id=13 | valid_in_upstream=1  a_in=0xf8b73030  b_in=0x3b57b798
+[DRIVER]    burst_id=13 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=14 | Driving transaction to DUT
+[iMon]      burst_id=13 | result_valid pulse observed on DUT output
+[oMon]      burst_id=13 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 16662  45418  38142  32558 ]
+[oMon]        got_C[1]=[ 12230  29038  22868  21002 ]
+[oMon]        got_C[2]=[ 48457 101449  80613  73305 ]
+[oMon]        got_C[3]=[ 74750 130069 108216 129427 ]
+
+[SCB]       burst_id=13 | Checking transaction
+[SCB]       burst_id=13 | C[0][0] MATCH      exp=16662  got=16662
+[SCB]       burst_id=13 | C[0][1] MATCH      exp=45418  got=45418
+[SCB]       burst_id=13 | C[0][2] MATCH      exp=38142  got=38142
+[SCB]       burst_id=13 | C[0][3] MATCH      exp=32558  got=32558
+[SCB]       burst_id=13 | C[1][0] MATCH      exp=12230  got=12230
+[SCB]       burst_id=13 | C[1][1] MATCH      exp=29038  got=29038
+[SCB]       burst_id=13 | C[1][2] MATCH      exp=22868  got=22868
+[SCB]       burst_id=13 | C[1][3] MATCH      exp=21002  got=21002
+[SCB]       burst_id=13 | C[2][0] MATCH      exp=48457  got=48457
+[SCB]       burst_id=13 | C[2][1] MATCH      exp=101449  got=101449
+[SCB]       burst_id=13 | C[2][2] MATCH      exp=80613  got=80613
+[SCB]       burst_id=13 | C[2][3] MATCH      exp=73305  got=73305
+[SCB]       burst_id=13 | C[3][0] MATCH      exp=74750  got=74750
+[SCB]       burst_id=13 | C[3][1] MATCH      exp=130069  got=130069
+[SCB]       burst_id=13 | C[3][2] MATCH      exp=108216  got=108216
+[SCB]       burst_id=13 | C[3][3] MATCH      exp=129427  got=129427
+[SCB]       burst_id=13 | Transaction PASSED
+[DRIVER]    burst_id=14 | start asserted
+[iMon]      burst_id=14 | start detected — new transaction beginning
+[DRIVER]    burst_id=14 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=14 | Cycle0 — a_in=0xf9daf4c7  b_in=0x9cf7e687  valid_in=1
+[iMon]      burst_id=14 | valid_in_upstream=1  a_in=0xf9daf4c7  b_in=0x9cf7e687
+[DRIVER]    burst_id=14 | Cycle1 — a_in=0x20c5b06b  b_in=0x5e506e34  valid_in=1
+[iMon]      burst_id=14 | valid_in_upstream=1  a_in=0x20c5b06b  b_in=0x5e506e34
+[DRIVER]    burst_id=14 | Cycle2 — a_in=0xed3fb3b3  b_in=0x7f77175d  valid_in=1
+[iMon]      burst_id=14 | valid_in_upstream=1  a_in=0xed3fb3b3  b_in=0x7f77175d
+[DRIVER]    burst_id=14 | Cycle3 — a_in=0xcff549bc  b_in=0x3aad34f7  valid_in=1
+[iMon]      burst_id=14 | valid_in_upstream=1  a_in=0xcff549bc  b_in=0x3aad34f7
+[DRIVER]    burst_id=14 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=15 | Driving transaction to DUT
+[iMon]      burst_id=14 | result_valid pulse observed on DUT output
+[oMon]      burst_id=14 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 95512  71433 111538  74739 ]
+[oMon]        got_C[1]=[ 76770  83393 108278  81575 ]
+[oMon]        got_C[2]=[106048  85999 119488  74737 ]
+[oMon]        got_C[3]=[108449  77005 128077  83957 ]
+
+[SCB]       burst_id=14 | Checking transaction
+[SCB]       burst_id=14 | C[0][0] MATCH      exp=95512  got=95512
+[SCB]       burst_id=14 | C[0][1] MATCH      exp=71433  got=71433
+[SCB]       burst_id=14 | C[0][2] MATCH      exp=111538  got=111538
+[SCB]       burst_id=14 | C[0][3] MATCH      exp=74739  got=74739
+[SCB]       burst_id=14 | C[1][0] MATCH      exp=76770  got=76770
+[SCB]       burst_id=14 | C[1][1] MATCH      exp=83393  got=83393
+[SCB]       burst_id=14 | C[1][2] MATCH      exp=108278  got=108278
+[SCB]       burst_id=14 | C[1][3] MATCH      exp=81575  got=81575
+[SCB]       burst_id=14 | C[2][0] MATCH      exp=106048  got=106048
+[SCB]       burst_id=14 | C[2][1] MATCH      exp=85999  got=85999
+[SCB]       burst_id=14 | C[2][2] MATCH      exp=119488  got=119488
+[SCB]       burst_id=14 | C[2][3] MATCH      exp=74737  got=74737
+[SCB]       burst_id=14 | C[3][0] MATCH      exp=108449  got=108449
+[SCB]       burst_id=14 | C[3][1] MATCH      exp=77005  got=77005
+[SCB]       burst_id=14 | C[3][2] MATCH      exp=128077  got=128077
+[SCB]       burst_id=14 | C[3][3] MATCH      exp=83957  got=83957
+[SCB]       burst_id=14 | Transaction PASSED
+[DRIVER]    burst_id=15 | start asserted
+[iMon]      burst_id=15 | start detected — new transaction beginning
+[DRIVER]    burst_id=15 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=15 | Cycle0 — a_in=0x1  b_in=0xd22eb5ac  valid_in=1
+[iMon]      burst_id=15 | valid_in_upstream=1  a_in=0x1  b_in=0xd22eb5ac
+[DRIVER]    burst_id=15 | Cycle1 — a_in=0x100  b_in=0x14c73455  valid_in=1
+[iMon]      burst_id=15 | valid_in_upstream=1  a_in=0x100  b_in=0x14c73455
+[DRIVER]    burst_id=15 | Cycle2 — a_in=0x10000  b_in=0x3fd1ca7d  valid_in=1
+[iMon]      burst_id=15 | valid_in_upstream=1  a_in=0x10000  b_in=0x3fd1ca7d
+[DRIVER]    burst_id=15 | Cycle3 — a_in=0x1000000  b_in=0x8b6761da  valid_in=1
+[iMon]      burst_id=15 | valid_in_upstream=1  a_in=0x1000000  b_in=0x8b6761da
+[DRIVER]    burst_id=15 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=16 | Driving transaction to DUT
+[iMon]      burst_id=15 | result_valid pulse observed on DUT output
+[oMon]      burst_id=15 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[   172    181     46    210 ]
+[oMon]        got_C[1]=[    85     52    199     20 ]
+[oMon]        got_C[2]=[   125    202    209     63 ]
+[oMon]        got_C[3]=[   218     97    103    139 ]
+
+[SCB]       burst_id=15 | Checking transaction
+[SCB]       burst_id=15 | C[0][0] MATCH      exp=172  got=172
+[SCB]       burst_id=15 | C[0][1] MATCH      exp=181  got=181
+[SCB]       burst_id=15 | C[0][2] MATCH      exp=46  got=46
+[SCB]       burst_id=15 | C[0][3] MATCH      exp=210  got=210
+[SCB]       burst_id=15 | C[1][0] MATCH      exp=85  got=85
+[SCB]       burst_id=15 | C[1][1] MATCH      exp=52  got=52
+[SCB]       burst_id=15 | C[1][2] MATCH      exp=199  got=199
+[SCB]       burst_id=15 | C[1][3] MATCH      exp=20  got=20
+[SCB]       burst_id=15 | C[2][0] MATCH      exp=125  got=125
+[SCB]       burst_id=15 | C[2][1] MATCH      exp=202  got=202
+[SCB]       burst_id=15 | C[2][2] MATCH      exp=209  got=209
+[SCB]       burst_id=15 | C[2][3] MATCH      exp=63  got=63
+[SCB]       burst_id=15 | C[3][0] MATCH      exp=218  got=218
+[SCB]       burst_id=15 | C[3][1] MATCH      exp=97  got=97
+[SCB]       burst_id=15 | C[3][2] MATCH      exp=103  got=103
+[SCB]       burst_id=15 | C[3][3] MATCH      exp=139  got=139
+[SCB]       burst_id=15 | Transaction PASSED
+[DRIVER]    burst_id=16 | start asserted
+[iMon]      burst_id=16 | start detected — new transaction beginning
+[DRIVER]    burst_id=16 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=16 | Cycle0 — a_in=0x12166b2a  b_in=0x10f986b2  valid_in=1
+[iMon]      burst_id=16 | valid_in_upstream=1  a_in=0x12166b2a  b_in=0x10f986b2
+[DRIVER]    burst_id=16 | Cycle1 — a_in=0xe7938de3  b_in=0x146a56ee  valid_in=1
+[iMon]      burst_id=16 | valid_in_upstream=1  a_in=0xe7938de3  b_in=0x146a56ee
+[DRIVER]    burst_id=16 | Cycle2 — a_in=0x55c408e1  b_in=0xa74759e9  valid_in=1
+[iMon]      burst_id=16 | valid_in_upstream=1  a_in=0x55c408e1  b_in=0xa74759e9
+[DRIVER]    burst_id=16 | Cycle3 — a_in=0xfd048607  b_in=0x27d0058f  valid_in=1
+[iMon]      burst_id=16 | valid_in_upstream=1  a_in=0xfd048607  b_in=0x27d0058f
+[DRIVER]    burst_id=16 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=17 | Driving transaction to DUT
+[iMon]      burst_id=16 | result_valid pulse observed on DUT output
+[oMon]      burst_id=16 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[114928  45210  51951  43060 ]
+[oMon]        got_C[1]=[ 73630  27846  70029  11094 ]
+[oMon]        got_C[2]=[ 85142  33054  35808  36180 ]
+[oMon]        got_C[3]=[114166  31108  87627  28970 ]
+
+[SCB]       burst_id=16 | Checking transaction
+[SCB]       burst_id=16 | C[0][0] MATCH      exp=114928  got=114928
+[SCB]       burst_id=16 | C[0][1] MATCH      exp=45210  got=45210
+[SCB]       burst_id=16 | C[0][2] MATCH      exp=51951  got=51951
+[SCB]       burst_id=16 | C[0][3] MATCH      exp=43060  got=43060
+[SCB]       burst_id=16 | C[1][0] MATCH      exp=73630  got=73630
+[SCB]       burst_id=16 | C[1][1] MATCH      exp=27846  got=27846
+[SCB]       burst_id=16 | C[1][2] MATCH      exp=70029  got=70029
+[SCB]       burst_id=16 | C[1][3] MATCH      exp=11094  got=11094
+[SCB]       burst_id=16 | C[2][0] MATCH      exp=85142  got=85142
+[SCB]       burst_id=16 | C[2][1] MATCH      exp=33054  got=33054
+[SCB]       burst_id=16 | C[2][2] MATCH      exp=35808  got=35808
+[SCB]       burst_id=16 | C[2][3] MATCH      exp=36180  got=36180
+[SCB]       burst_id=16 | C[3][0] MATCH      exp=114166  got=114166
+[SCB]       burst_id=16 | C[3][1] MATCH      exp=31108  got=31108
+[SCB]       burst_id=16 | C[3][2] MATCH      exp=87627  got=87627
+[SCB]       burst_id=16 | C[3][3] MATCH      exp=28970  got=28970
+[SCB]       burst_id=16 | Transaction PASSED
+[DRIVER]    burst_id=17 | start asserted
+[iMon]      burst_id=17 | start detected — new transaction beginning
+[DRIVER]    burst_id=17 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=17 | Cycle0 — a_in=0x1099629f  b_in=0x1866f49f  valid_in=1
+[iMon]      burst_id=17 | valid_in_upstream=1  a_in=0x1099629f  b_in=0x1866f49f
+[DRIVER]    burst_id=17 | Cycle1 — a_in=0xbce3a323  b_in=0x3bd5be00  valid_in=1
+[iMon]      burst_id=17 | valid_in_upstream=1  a_in=0xbce3a323  b_in=0x3bd5be00
+[DRIVER]    burst_id=17 | Cycle2 — a_in=0xca475681  b_in=0x4b481812  valid_in=1
+[iMon]      burst_id=17 | valid_in_upstream=1  a_in=0xca475681  b_in=0x4b481812
+[DRIVER]    burst_id=17 | Cycle3 — a_in=0xbb4e3e23  b_in=0x2cdef455  valid_in=1
+[iMon]      burst_id=17 | valid_in_upstream=1  a_in=0xbb4e3e23  b_in=0x2cdef455
+[DRIVER]    burst_id=17 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=18 | Driving transaction to DUT
+[iMon]      burst_id=17 | result_valid pulse observed on DUT output
+[oMon]      burst_id=17 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 30578  57082  40731  17096 ]
+[oMon]        got_C[1]=[ 22400  72074  64671  21147 ]
+[oMon]        got_C[2]=[ 32235 101198  86385  25822 ]
+[oMon]        got_C[3]=[ 22075  90100  97734  34854 ]
+
+[SCB]       burst_id=17 | Checking transaction
+[SCB]       burst_id=17 | C[0][0] MATCH      exp=30578  got=30578
+[SCB]       burst_id=17 | C[0][1] MATCH      exp=57082  got=57082
+[SCB]       burst_id=17 | C[0][2] MATCH      exp=40731  got=40731
+[SCB]       burst_id=17 | C[0][3] MATCH      exp=17096  got=17096
+[SCB]       burst_id=17 | C[1][0] MATCH      exp=22400  got=22400
+[SCB]       burst_id=17 | C[1][1] MATCH      exp=72074  got=72074
+[SCB]       burst_id=17 | C[1][2] MATCH      exp=64671  got=64671
+[SCB]       burst_id=17 | C[1][3] MATCH      exp=21147  got=21147
+[SCB]       burst_id=17 | C[2][0] MATCH      exp=32235  got=32235
+[SCB]       burst_id=17 | C[2][1] MATCH      exp=101198  got=101198
+[SCB]       burst_id=17 | C[2][2] MATCH      exp=86385  got=86385
+[SCB]       burst_id=17 | C[2][3] MATCH      exp=25822  got=25822
+[SCB]       burst_id=17 | C[3][0] MATCH      exp=22075  got=22075
+[SCB]       burst_id=17 | C[3][1] MATCH      exp=90100  got=90100
+[SCB]       burst_id=17 | C[3][2] MATCH      exp=97734  got=97734
+[SCB]       burst_id=17 | C[3][3] MATCH      exp=34854  got=34854
+[SCB]       burst_id=17 | Transaction PASSED
+[DRIVER]    burst_id=18 | start asserted
+[iMon]      burst_id=18 | start detected — new transaction beginning
+[DRIVER]    burst_id=18 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=18 | Cycle0 — a_in=0x367dfdc2  b_in=0x3781ff62  valid_in=1
+[iMon]      burst_id=18 | valid_in_upstream=1  a_in=0x367dfdc2  b_in=0x3781ff62
+[DRIVER]    burst_id=18 | Cycle1 — a_in=0x943f92f8  b_in=0x783072ba  valid_in=1
+[iMon]      burst_id=18 | valid_in_upstream=1  a_in=0x943f92f8  b_in=0x783072ba
+[DRIVER]    burst_id=18 | Cycle2 — a_in=0x52478729  b_in=0x2a5f388c  valid_in=1
+[iMon]      burst_id=18 | valid_in_upstream=1  a_in=0x52478729  b_in=0x2a5f388c
+[DRIVER]    burst_id=18 | Cycle3 — a_in=0xb546828a  b_in=0x413bb1f8  valid_in=1
+[iMon]      burst_id=18 | valid_in_upstream=1  a_in=0xb546828a  b_in=0x413bb1f8
+[DRIVER]    burst_id=18 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=19 | Driving transaction to DUT
+[iMon]      burst_id=18 | result_valid pulse observed on DUT output
+[oMon]      burst_id=18 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[105104 104464  48967  51122 ]
+[oMon]        got_C[1]=[103090 111729  60140  45555 ]
+[oMon]        got_C[2]=[ 51268  55423  30024  21967 ]
+[oMon]        got_C[3]=[ 89188  67271  32539  35939 ]
+
+[SCB]       burst_id=18 | Checking transaction
+[SCB]       burst_id=18 | C[0][0] MATCH      exp=105104  got=105104
+[SCB]       burst_id=18 | C[0][1] MATCH      exp=104464  got=104464
+[SCB]       burst_id=18 | C[0][2] MATCH      exp=48967  got=48967
+[SCB]       burst_id=18 | C[0][3] MATCH      exp=51122  got=51122
+[SCB]       burst_id=18 | C[1][0] MATCH      exp=103090  got=103090
+[SCB]       burst_id=18 | C[1][1] MATCH      exp=111729  got=111729
+[SCB]       burst_id=18 | C[1][2] MATCH      exp=60140  got=60140
+[SCB]       burst_id=18 | C[1][3] MATCH      exp=45555  got=45555
+[SCB]       burst_id=18 | C[2][0] MATCH      exp=51268  got=51268
+[SCB]       burst_id=18 | C[2][1] MATCH      exp=55423  got=55423
+[SCB]       burst_id=18 | C[2][2] MATCH      exp=30024  got=30024
+[SCB]       burst_id=18 | C[2][3] MATCH      exp=21967  got=21967
+[SCB]       burst_id=18 | C[3][0] MATCH      exp=89188  got=89188
+[SCB]       burst_id=18 | C[3][1] MATCH      exp=67271  got=67271
+[SCB]       burst_id=18 | C[3][2] MATCH      exp=32539  got=32539
+[SCB]       burst_id=18 | C[3][3] MATCH      exp=35939  got=35939
+[SCB]       burst_id=18 | Transaction PASSED
+[DRIVER]    burst_id=19 | start asserted
+[iMon]      burst_id=19 | start detected — new transaction beginning
+[DRIVER]    burst_id=19 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=19 | Cycle0 — a_in=0xc49c6f60  b_in=0xd785b7d1  valid_in=1
+[iMon]      burst_id=19 | valid_in_upstream=1  a_in=0xc49c6f60  b_in=0xd785b7d1
+[DRIVER]    burst_id=19 | Cycle1 — a_in=0xbee1ed22  b_in=0x76a8f25d  valid_in=1
+[iMon]      burst_id=19 | valid_in_upstream=1  a_in=0xbee1ed22  b_in=0x76a8f25d
+[DRIVER]    burst_id=19 | Cycle2 — a_in=0x4203b09e  b_in=0x9bb4dbf9  valid_in=1
+[iMon]      burst_id=19 | valid_in_upstream=1  a_in=0x4203b09e  b_in=0x9bb4dbf9
+[DRIVER]    burst_id=19 | Cycle3 — a_in=0xf6c19be5  b_in=0x915cf1a9  valid_in=1
+[iMon]      burst_id=19 | valid_in_upstream=1  a_in=0xf6c19be5  b_in=0x915cf1a9
+[DRIVER]    burst_id=19 | valid_in_upstream de-asserted — transaction driven.
+[DRIVER]    burst_id=20 | Driving transaction to DUT
+[iMon]      burst_id=19 | result_valid pulse observed on DUT output
+[oMon]      burst_id=19 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[101269 115587  67988  82347 ]
+[oMon]        got_C[1]=[115259 153566 100519 101586 ]
+[oMon]        got_C[2]=[ 86893 130168  76844  88540 ]
+[oMon]        got_C[3]=[116642 155588  92500 110460 ]
+
+[SCB]       burst_id=19 | Checking transaction
+[SCB]       burst_id=19 | C[0][0] MATCH      exp=101269  got=101269
+[SCB]       burst_id=19 | C[0][1] MATCH      exp=115587  got=115587
+[SCB]       burst_id=19 | C[0][2] MATCH      exp=67988  got=67988
+[SCB]       burst_id=19 | C[0][3] MATCH      exp=82347  got=82347
+[SCB]       burst_id=19 | C[1][0] MATCH      exp=115259  got=115259
+[SCB]       burst_id=19 | C[1][1] MATCH      exp=153566  got=153566
+[SCB]       burst_id=19 | C[1][2] MATCH      exp=100519  got=100519
+[SCB]       burst_id=19 | C[1][3] MATCH      exp=101586  got=101586
+[SCB]       burst_id=19 | C[2][0] MATCH      exp=86893  got=86893
+[SCB]       burst_id=19 | C[2][1] MATCH      exp=130168  got=130168
+[SCB]       burst_id=19 | C[2][2] MATCH      exp=76844  got=76844
+[SCB]       burst_id=19 | C[2][3] MATCH      exp=88540  got=88540
+[SCB]       burst_id=19 | C[3][0] MATCH      exp=116642  got=116642
+[SCB]       burst_id=19 | C[3][1] MATCH      exp=155588  got=155588
+[SCB]       burst_id=19 | C[3][2] MATCH      exp=92500  got=92500
+[SCB]       burst_id=19 | C[3][3] MATCH      exp=110460  got=110460
+[SCB]       burst_id=19 | Transaction PASSED
+[DRIVER]    burst_id=20 | start asserted
+[iMon]      burst_id=20 | start detected — new transaction beginning
+[DRIVER]    burst_id=20 | DUT ready asserted — beginning data drive
+[DRIVER]    burst_id=20 | Cycle0 — a_in=0xad70c836  b_in=0x5cd6f463  valid_in=1
+[iMon]      burst_id=20 | valid_in_upstream=1  a_in=0xad70c836  b_in=0x5cd6f463
+[DRIVER]    burst_id=20 | Cycle1 — a_in=0x7c21eb35  b_in=0xb1308ab2  valid_in=1
+[iMon]      burst_id=20 | valid_in_upstream=1  a_in=0x7c21eb35  b_in=0xb1308ab2
+[DRIVER]    burst_id=20 | Cycle2 — a_in=0xdd2585df  b_in=0x73918339  valid_in=1
+[iMon]      burst_id=20 | valid_in_upstream=1  a_in=0xdd2585df  b_in=0x73918339
+[DRIVER]    burst_id=20 | Cycle3 — a_in=0x548e3fc  b_in=0x7b43b42f  valid_in=1
+[iMon]      burst_id=20 | valid_in_upstream=1  a_in=0x548e3fc  b_in=0x7b43b42f
+[DRIVER]    burst_id=20 | valid_in_upstream de-asserted — transaction driven.
+[iMon]      burst_id=20 | result_valid pulse observed on DUT output
+[oMon]      burst_id=20 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[ 39335  95063  63319  70990 ]
+[oMon]        got_C[1]=[ 79880 139513  88574 103211 ]
+[oMon]        got_C[2]=[ 22455  49689  35741  29256 ]
+[oMon]        got_C[3]=[ 52031  89175  75354  63894 ]
+
+[SCB]       burst_id=20 | Checking transaction
+[SCB]       burst_id=20 | C[0][0] MATCH      exp=39335  got=39335
+[SCB]       burst_id=20 | C[0][1] MATCH      exp=95063  got=95063
+[SCB]       burst_id=20 | C[0][2] MATCH      exp=63319  got=63319
+[SCB]       burst_id=20 | C[0][3] MATCH      exp=70990  got=70990
+[SCB]       burst_id=20 | C[1][0] MATCH      exp=79880  got=79880
+[SCB]       burst_id=20 | C[1][1] MATCH      exp=139513  got=139513
+[SCB]       burst_id=20 | C[1][2] MATCH      exp=88574  got=88574
+[SCB]       burst_id=20 | C[1][3] MATCH      exp=103211  got=103211
+[SCB]       burst_id=20 | C[2][0] MATCH      exp=22455  got=22455
+[SCB]       burst_id=20 | C[2][1] MATCH      exp=49689  got=49689
+[SCB]       burst_id=20 | C[2][2] MATCH      exp=35741  got=35741
+[SCB]       burst_id=20 | C[2][3] MATCH      exp=29256  got=29256
+[SCB]       burst_id=20 | C[3][0] MATCH      exp=52031  got=52031
+[SCB]       burst_id=20 | C[3][1] MATCH      exp=89175  got=89175
+[SCB]       burst_id=20 | C[3][2] MATCH      exp=75354  got=75354
+[SCB]       burst_id=20 | C[3][3] MATCH      exp=63894  got=63894
+[SCB]       burst_id=20 | Transaction PASSED
+
+======================================================
+  SCOREBOARD FINAL REPORT
+  Transactions:  PASS=20  FAIL=0
+  Elements:      PASS=320  FAIL=0
+  OVERALL: *** ALL TESTS PASSED ***
+======================================================
+
+
+[COV]  Functional coverage collected by module-level
+[COV]  covergroups in tb_class_mm_accelerator.sv.
+[COV]  Run: make cov  to see the full code+func report.
+
+[ENV]       Environment run complete.
+[TB_TOP]    Injecting manual FSM sequences for coverage...
+[iMon]      burst_id=21 | start detected — new transaction beginning
+[iMon]      burst_id=21 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=21 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=21 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=22 | start detected — new transaction beginning
+[iMon]      burst_id=22 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=22 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=22 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=22 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=22 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=23 | start detected — new transaction beginning
+[iMon]      burst_id=23 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=23 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=23 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=23 | valid_in_upstream=1  a_in=0x0  b_in=0x0
+[iMon]      burst_id=23 | result_valid pulse observed on DUT output
+[oMon]      burst_id=21 | result_valid=1 — capturing DUT output
+[oMon]        got_C[0]=[     0      0      0      0 ]
+[oMon]        got_C[1]=[     0      0      0      0 ]
+[oMon]        got_C[2]=[     0      0      0      0 ]
+[oMon]        got_C[3]=[     0      0      0      0 ]
+[TB_TOP]    Simulation complete.
+
+==============================================
+  FUNCTIONAL COVERAGE REPORT
+  cg_a_range   : 100.0%
+  cg_b_range   : 100.0%
+  cg_result    : 100.0%
+  cg_fsm       : 100.0%
+==============================================
+
+$finish called from file "tb_class_mm_accelerator.sv", line 148.
+$finish at simulation time              7595000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 7595000 ps
+CPU Time:      1.270 seconds;       Data structure size:   0.1Mb
+Thu May 28 21:15:32 2026

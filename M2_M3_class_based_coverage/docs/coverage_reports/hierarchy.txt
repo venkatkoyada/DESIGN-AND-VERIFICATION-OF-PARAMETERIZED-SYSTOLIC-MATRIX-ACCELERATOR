@@ -1,0 +1,37 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   TOGGLE FSM    BRANCH                         
+ 94.15 100.00 100.00  70.75 100.00 100.00 tb_class_mm_accelerator 
+  
+  ----------------
+  SCORE  LINE   COND   TOGGLE FSM    BRANCH        
+   61.51 --     --      61.51 --     --     dut_if 
+   94.58 100.00 100.00  72.90 100.00 100.00 u_dut  
+    
+    ----------------
+    SCORE  LINE   COND   TOGGLE FSM    BRANCH                  
+     98.00 100.00 100.00  90.00 100.00 100.00 u_controller     
+    100.00 100.00 --     100.00 --     100.00 u_input_skew     
+     91.14 100.00 --      73.41 --     100.00 u_systolic_array 
+      
+      ----------------
+      SCORE  LINE   COND   TOGGLE FSM    BRANCH                            
+       93.24 100.00 --      79.71 --     100.00 row_gen[0].col_gen[0].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[0].col_gen[1].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[0].col_gen[2].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[0].col_gen[3].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[1].col_gen[0].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[1].col_gen[1].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[1].col_gen[2].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[1].col_gen[3].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[2].col_gen[0].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[2].col_gen[1].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[2].col_gen[2].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[2].col_gen[3].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[3].col_gen[0].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[3].col_gen[1].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[3].col_gen[2].u_pe 
+       93.24 100.00 --      79.71 --     100.00 row_gen[3].col_gen[3].u_pe 
+
