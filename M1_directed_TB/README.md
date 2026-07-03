@@ -1,4 +1,4 @@
-# Milestone 1-RTL + Directed (Self-Checking) Testbench
+# Milestone 1 - RTL + Directed (Self-Checking) Testbench
 
 ## Overview
 This milestone covers the initial RTL implementation of a parameterized systolic array matrix-multiplication accelerator, verified using a directed, self-checking testbench. This was a 3-person team project. The design uses a 2D array of processing elements (PEs) to perform matrix multiplication via a systolic dataflow, with staggered input skewing and FSM-based control.
