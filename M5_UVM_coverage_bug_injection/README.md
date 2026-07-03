@@ -1,28 +1,16 @@
-# Milestone 5 — UVM, Functional Coverage & Bug Injection Campaign
+# Milestone 5 - UVM, Functional Coverage & Bug Injection Campaign
 
-## What this milestone covers
-- Final RTL design, verified with a complete **UVM testbench** including
-  **functional coverage** collection (`mm_coverage.sv`, `cm_hier.cfg`).
-- A formal **bug injection campaign**: four bugs (BUG1–BUG4) were deliberately
-  injected into the design, and the UVM testbench + coverage model were used to
-  detect and diagnose each one — demonstrating the verification environment's
-  effectiveness at catching real defects, not just passing clean RTL.
+## Overview
+The final milestone verifies the completed RTL design using a full UVM testbench with functional coverage collection, followed by a formal bug injection campaign to validate the verification environment's effectiveness. This was a 3-person team project.
 
-## Folder layout
-- `src/` — final RTL design files
-- `tb/` — full UVM testbench (agent, driver, monitor, scoreboard, coverage, sequence, sequencer, seq_item, virtual interface, test, top)
-- `scripts/` — Makefile to run simulation
-- `docs/` — design specification, verification plan, simulation/UVM run logs
-  - `coverage_reports/` — functional coverage dashboard and group reports
-  - `bug_injection_reports/` — per-bug simulation and UVM run logs for BUG1–BUG4, plus `BUG_REPORT.pdf` summarizing the campaign
-  - project presentation (`Systolic_Array_Accelerator.pptx`)
-- `waveforms/` — waveform screenshot from simulation
+## My Contribution
+On the RTL side, `pe.sv` and `input_skew.sv` remain my contribution. On the UVM side, I built the **monitor**, **agent**, and **sequence item** (carried forward from Milestone 4), and added the **functional coverage model** (`mm_coverage.sv`) for this milestone. For the bug injection campaign, I was responsible for injecting and documenting one RTL-side bug and one verification-environment-side (UVM) bug, confirming both were correctly detected by the testbench.
 
-## Why this approach
-Coverage tells you *what* you've tested; bug injection tells you *whether your
-testbench actually works*. Deliberately inserting known bugs and confirming
-the UVM environment catches every one of them is a standard way to validate
-verification quality — if a testbench can't catch an injected bug, it likely
-can't catch a real one either. This milestone represents the completed
-verification flow: directed → class-based/coverage → UVM → UVM +
-coverage-driven bug detection.
+## Project Structure
+```
+src/      → Final RTL design files
+tb/       → Full UVM testbench (agent, driver, monitor, scoreboard, coverage, sequence, sequencer, seq_item, interface, test, top)
+scripts/  → Makefile to run simulation
+docs/     → Design spec, verification plan, sim/UVM logs, coverage_reports/, bug_injection_reports/, project presentation
+waveforms/→ Waveform screenshot from simulation
+```
