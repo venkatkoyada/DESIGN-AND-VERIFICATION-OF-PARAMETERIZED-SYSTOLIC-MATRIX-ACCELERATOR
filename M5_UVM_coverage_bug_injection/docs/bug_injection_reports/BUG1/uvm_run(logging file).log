@@ -1,0 +1,37 @@
+UVM_ERROR mm_scoreboard.sv(99) @ 375000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     218   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 375000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=1]
+UVM_ERROR mm_scoreboard.sv(99) @ 525000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=  260100   got=  195075   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 525000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=2]
+UVM_ERROR mm_scoreboard.sv(99) @ 975000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   49098   got=   30772   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 975000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=3]
+UVM_ERROR mm_scoreboard.sv(99) @ 1125000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   55878   got=   27556   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1125000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=4]
+UVM_ERROR mm_scoreboard.sv(99) @ 1275000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   77536   got=   76040   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1275000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=5]
+UVM_ERROR mm_scoreboard.sv(99) @ 1425000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   81114   got=   47086   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1425000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=6]
+UVM_ERROR mm_scoreboard.sv(99) @ 1575000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     217   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1575000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=7]
+UVM_ERROR mm_scoreboard.sv(99) @ 1725000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   92118   got=   77073   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1725000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=8]
+UVM_ERROR mm_scoreboard.sv(99) @ 1875000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   71252   got=   56052   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1875000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=9]
+UVM_ERROR mm_scoreboard.sv(99) @ 2025000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   51658   got=   42484   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2025000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=10]
+UVM_ERROR mm_scoreboard.sv(99) @ 2175000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   81659   got=   75991   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2175000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=11]
+UVM_ERROR mm_scoreboard.sv(99) @ 2325000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   47611   got=   36019   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2325000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=12]
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   73738   got=   72748   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=13]
+UVM_ERROR mm_scoreboard.sv(99) @ 2625000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   41636   got=   31884   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2625000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=14]
+UVM_ERROR mm_scoreboard.sv(99) @ 2775000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=  260100   got=  195075   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2775000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=15]
+UVM_ERROR mm_scoreboard.sv(99) @ 2925000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   40448   got=   38048   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2925000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=16]
+UVM_ERROR mm_scoreboard.sv(99) @ 3075000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   55054   got=   53096   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 3075000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=17]
+UVM_ERROR mm_scoreboard.sv(99) @ 3225000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=   76877   got=   70989   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 3225000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=18]
+UVM_ERROR mm_scoreboard.sv(150) @ 3226000: uvm_test_top.env.scb [SCB_CLASS]   OVERALL: *** 18 ELEMENT FAILURE(S) DETECTED ***

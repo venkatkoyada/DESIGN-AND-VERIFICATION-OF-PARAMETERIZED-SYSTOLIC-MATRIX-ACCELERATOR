@@ -1,0 +1,1164 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2_Full64; Runtime version V-2023.12-SP2_Full64;  Jun  1 14:14 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+ VCS Coverage Metrics Release V-2023.12-SP2_Full64 Copyright (c) 1991-2023 by Synopsys Inc.
+*Verdi* Loading libsscore_vcs202312.so
+FSDB Dumper for VCS, Release Verdi_X-2025.06-SP2-1, Linux x86_64/64bit, 01/19/2026
+(C) 1996 - 2026 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'novas_uvm.fsdb'
+*Verdi* : Begin traversing the scope (tb_top), layer (0).
+*Verdi* : End of traversing.
+[TB_TOP] FSDB waveform dump enabled: novas_uvm.fsdb
+UVM_INFO @ 0: reporter [RNTST] Running test mm_test...
+UVM_INFO mm_test.sv(44) @ 0: uvm_test_top [TEST_CLASS] End of Elaboration Phase — UVM Testbench Topology:
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               mm_test                 -     @461 
+  env                      mm_env                  -     @469 
+    agnt                   mm_agent                -     @477 
+      drv                  mm_driver               -     @641 
+        rsp_port           uvm_analysis_port       -     @658 
+        seq_item_port      uvm_seq_item_pull_port  -     @649 
+      mon                  mm_monitor              -     @667 
+        monitor_port       uvm_analysis_port       -     @676 
+      seqr                 mm_sequencer            -     @518 
+        rsp_export         uvm_analysis_export     -     @526 
+        seq_item_export    uvm_seq_item_pull_imp   -     @632 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    cov                    mm_coverage             -     @493 
+      analysis_imp         uvm_analysis_imp        -     @501 
+    scb                    mm_scoreboard           -     @485 
+      scoreboard_port      uvm_analysis_imp        -     @692 
+--------------------------------------------------------------
+
+UVM_INFO mm_test.sv(75) @ 0: uvm_test_top [TEST_CLASS] UVM Logging enabled — all messages mirrored to uvm_run.log
+UVM_INFO mm_test.sv(80) @ 0: uvm_test_top [PROJECT_INFO] 
+
+================================================================================
+||                                                                            ||
+||          #####  ####   #####    #####  #####  #####                      ||
+||          #      #      #        #      #   #      #                      ||
+||          ####   #      ####     #####  #####  #####                      ||
+||          #      #      #            #      #      #                      ||
+||          #####  ####   #####    #####      #  #####                      ||
+||                                                                            ||
+||   PARAMETERIZED SYSTOLIC ARRAY MATRIX MULTIPLICATION ACCELERATOR         ||
+||                                                                            ||
+||   Course    : ECE 593 - Fundamentals of Pre-Silicon Validation           ||
+||   Professor : Venkatesh Patil                                             ||
+||   Matrix    : 4 x 4  (Parameterized - run: make N=<value> all)        ||
+||                                                                            ||
+||   Group Members :                                                         ||
+||     [1] Nikhil Swarna                                                     ||
+||     [2] Hanisha Dhananjaya Produtur                                       ||
+||     [3] Venkat Sai Sumanth Koyada                                         ||
+||                                                                            ||
+================================================================================
+
+
+UVM_INFO mm_driver.sv(63) @ 0: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Asserting reset (5 cycles)...
+UVM_INFO mm_test.sv(112) @ 0: uvm_test_top [TEST_CLASS] 
+================================================
+UVM_INFO mm_test.sv(115) @ 0: uvm_test_top [TEST_CLASS]   MM ACCELERATOR UVM TEST STARTING
+UVM_INFO mm_test.sv(118) @ 0: uvm_test_top [TEST_CLASS]   Plan: 5 corner + 16 random = 21 total transactions
+UVM_INFO mm_test.sv(122) @ 0: uvm_test_top [TEST_CLASS] ================================================
+
+UVM_INFO mm_test.sv(128) @ 0: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (1/5) zero-A ---
+UVM_INFO mm_driver.sv(78) @ 75000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Reset released — DUT initialised
+UVM_INFO mm_sequence.sv(91) @ 75000: uvm_test_top.env.agnt.seqr@@zero_seq [ZERO_SEQ] Sending zero-A corner:
+  [SEQ_ITEM] corner_mode=1
+    A[0]=[   0   0   0   0 ]  B[0]=[  29 118 114 243 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[  19 102  68 157 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[  43 245  39  40 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[ 146  53  74  96 ]
+  Expected C:
+    C[0]=[     237     518     295     536 ]
+    C[1]=[     237     518     295     536 ]
+    C[2]=[     237     518     295     536 ]
+    C[3]=[     237     518     295     536 ]
+UVM_INFO mm_driver.sv(44) @ 75000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=1  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 95000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 146000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 225000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 235000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 235000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   0   0   0   0 ]  B[0]=[  29 118 114 243 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[  19 102  68 157 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[  43 245  39  40 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[ 146  53  74  96 ]
+  Expected C:
+    C[0]=[     237     518     295     536 ]
+    C[1]=[     237     518     295     536 ]
+    C[2]=[     237     518     295     536 ]
+    C[3]=[     237     518     295     536 ]
+UVM_INFO mm_coverage.sv(204) @ 235000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=25.0%  A=16.7%  B=66.7%  result=50.0%
+UVM_INFO mm_scoreboard.sv(66) @ 235000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 235000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     237   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     518   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     295   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     536   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     237   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     518   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     295   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     536   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     237   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     518   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     295   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     536   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     237   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     518   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     295   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 235000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     536   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 235000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=16]
+UVM_INFO mm_test.sv(136) @ 236000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (2/5) identity-A ---
+UVM_INFO mm_sequence.sv(123) @ 236000: uvm_test_top.env.agnt.seqr@@id_seq [IDENTITY_SEQ] Sending identity-A corner:
+  [SEQ_ITEM] corner_mode=2
+    A[0]=[   1   0   0   0 ]  B[0]=[ 201 120 237   1 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[ 111  26  94  34 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   7 157  98 181 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  61 221 194 218 ]
+  Expected C:
+    C[0]=[     381     525     624     435 ]
+    C[1]=[     381     525     624     435 ]
+    C[2]=[     381     525     624     435 ]
+    C[3]=[     381     525     624     435 ]
+UVM_INFO mm_driver.sv(44) @ 236000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=2  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 255000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 306000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 385000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 395000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 395000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   1   0   0   0 ]  B[0]=[ 201 120 237   1 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[ 111  26  94  34 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   7 157  98 181 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  61 221 194 218 ]
+  Expected C:
+    C[0]=[     381     525     624     435 ]
+    C[1]=[     381     525     624     435 ]
+    C[2]=[     381     525     624     435 ]
+    C[3]=[     381     525     624     435 ]
+UVM_INFO mm_coverage.sv(204) @ 395000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=50.0%  A=33.3%  B=66.7%  result=50.0%
+UVM_INFO mm_scoreboard.sv(66) @ 395000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 395000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     381   got=     201   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     525   got=     120   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     624   got=     237   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     435   got=       1   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     381   got=     111   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     525   got=      26   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     624   got=      94   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     435   got=      34   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     381   got=       7   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     525   got=     157   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     624   got=      98   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     435   got=     181   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     381   got=      61   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     525   got=     221   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     624   got=     194   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 395000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     435   got=     218   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 395000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=32]
+UVM_INFO mm_test.sv(144) @ 396000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (3/5) all-max ---
+UVM_INFO mm_sequence.sv(154) @ 396000: uvm_test_top.env.agnt.seqr@@max_seq [MAX_SEQ] Sending all-max corner:
+  [SEQ_ITEM] corner_mode=3
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[    2040    2040    2040    2040 ]
+    C[1]=[    2040    2040    2040    2040 ]
+    C[2]=[    2040    2040    2040    2040 ]
+    C[3]=[    2040    2040    2040    2040 ]
+UVM_INFO mm_driver.sv(44) @ 396000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=3  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 415000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 466000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 545000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 555000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 555000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[    2040    2040    2040    2040 ]
+    C[1]=[    2040    2040    2040    2040 ]
+    C[2]=[    2040    2040    2040    2040 ]
+    C[3]=[    2040    2040    2040    2040 ]
+UVM_INFO mm_coverage.sv(204) @ 555000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=75.0%  A=50.0%  B=83.3%  result=50.0%
+UVM_INFO mm_scoreboard.sv(66) @ 555000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 555000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 555000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    2040   got=  260100   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 555000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=48]
+UVM_INFO mm_test.sv(152) @ 556000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (4/5) zero-B ---
+UVM_INFO mm_sequence.sv(193) @ 556000: uvm_test_top.env.agnt.seqr@@zero_b_seq [ZERO_B_SEQ] Sending zero-B coverage txn:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 141 225 113 116 ]  B[0]=[   0   0   0   0 ]
+    A[1]=[  94  34 107 241 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[  75 251   3  20 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[ 118 152  35  84 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     595     595     595     595 ]
+    C[1]=[     476     476     476     476 ]
+    C[2]=[     349     349     349     349 ]
+    C[3]=[     389     389     389     389 ]
+UVM_INFO mm_driver.sv(44) @ 556000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 575000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 626000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 705000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 715000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 715000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 141 225 113 116 ]  B[0]=[   0   0   0   0 ]
+    A[1]=[  94  34 107 241 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[  75 251   3  20 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[ 118 152  35  84 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     595     595     595     595 ]
+    C[1]=[     476     476     476     476 ]
+    C[2]=[     349     349     349     349 ]
+    C[3]=[     389     389     389     389 ]
+UVM_INFO mm_coverage.sv(204) @ 715000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=50.0%
+UVM_INFO mm_scoreboard.sv(66) @ 715000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 715000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     595   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     595   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     595   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     595   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     476   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     476   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     476   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     476   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     349   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     349   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     349   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     349   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     389   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     389   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     389   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 715000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     389   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 715000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=64]
+UVM_INFO mm_test.sv(160) @ 716000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (5/5) mid-range ---
+UVM_INFO mm_sequence.sv(237) @ 716000: uvm_test_top.env.agnt.seqr@@midrange_seq [MIDRANGE_SEQ] Sending mid-range coverage txn:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[   2   0   0   0 ]  B[0]=[ 128   0   0   0 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     130       2       2       2 ]
+    C[1]=[     128       0       0       0 ]
+    C[2]=[     128       0       0       0 ]
+    C[3]=[     128       0       0       0 ]
+UVM_INFO mm_driver.sv(44) @ 716000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 735000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 786000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 865000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 875000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 875000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   2   0   0   0 ]  B[0]=[ 128   0   0   0 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     130       2       2       2 ]
+    C[1]=[     128       0       0       0 ]
+    C[2]=[     128       0       0       0 ]
+    C[3]=[     128       0       0       0 ]
+UVM_INFO mm_coverage.sv(204) @ 875000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 875000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 875000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     130   got=     256   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=       2   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=       2   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=       2   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     128   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     128   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 875000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     128   got=       0   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 875000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=71]
+UVM_INFO mm_test.sv(169) @ 876000: uvm_test_top [TEST_CLASS] --- Phase A complete: 5 corner transactions done ---
+UVM_INFO mm_test.sv(175) @ 876000: uvm_test_top [TEST_CLASS] --- Phase B: 16 Random Sequences starting ---
+UVM_INFO mm_sequence.sv(261) @ 876000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 876000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[   2 105   5 183 ]  B[0]=[ 211  35  92 154 ]
+    A[1]=[  76  73 146 124 ]  B[1]=[  53 104  45 121 ]
+    A[2]=[ 187  66 236 128 ]  B[2]=[   6 211 224 210 ]
+    A[3]=[  78 223  46  99 ]  B[3]=[ 160  55 140 173 ]
+  Expected C:
+    C[0]=[     725     700     796     953 ]
+    C[1]=[     849     824     920    1077 ]
+    C[2]=[    1047    1022    1118    1275 ]
+    C[3]=[     876     851     947    1104 ]
+UVM_INFO mm_driver.sv(44) @ 876000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 895000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 946000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1025000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1035000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1035000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   2 105   5 183 ]  B[0]=[ 211  35  92 154 ]
+    A[1]=[  76  73 146 124 ]  B[1]=[  53 104  45 121 ]
+    A[2]=[ 187  66 236 128 ]  B[2]=[   6 211 224 210 ]
+    A[3]=[  78 223  46  99 ]  B[3]=[ 160  55 140 173 ]
+  Expected C:
+    C[0]=[     725     700     796     953 ]
+    C[1]=[     849     824     920    1077 ]
+    C[2]=[    1047    1022    1118    1275 ]
+    C[3]=[     876     851     947    1104 ]
+UVM_INFO mm_coverage.sv(204) @ 1035000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     725   got=   35297   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     700   got=   22110   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     796   got=   31649   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     953   got=   45722   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     849   got=   40621   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     824   got=   47878   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     920   got=   60341   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1077   got=   72649   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1047   got=   64851   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1022   got=   70245   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1118   got=   90958   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1275   got=  108488   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     876   got=   44393   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     851   got=   41073   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     947   got=   41375   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1035000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1104   got=   65782   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=87]
+UVM_INFO mm_sequence.sv(261) @ 1036000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1036000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 213 244   0  86 ]  B[0]=[  98  78 148  80 ]
+    A[1]=[ 106  58  25 187 ]  B[1]=[ 198 148 107 237 ]
+    A[2]=[ 155 147  96  58 ]  B[2]=[ 119 179  19 104 ]
+    A[3]=[  74  64 148 141 ]  B[3]=[ 154 222 103 219 ]
+  Expected C:
+    C[0]=[    1112    1170     920    1183 ]
+    C[1]=[     945    1003     753    1016 ]
+    C[2]=[    1025    1083     833    1096 ]
+    C[3]=[     996    1054     804    1067 ]
+UVM_INFO mm_driver.sv(44) @ 1036000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1055000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1106000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1185000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1195000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1195000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 213 244   0  86 ]  B[0]=[  98  78 148  80 ]
+    A[1]=[ 106  58  25 187 ]  B[1]=[ 198 148 107 237 ]
+    A[2]=[ 155 147  96  58 ]  B[2]=[ 119 179  19 104 ]
+    A[3]=[  74  64 148 141 ]  B[3]=[ 154 222 103 219 ]
+  Expected C:
+    C[0]=[    1112    1170     920    1183 ]
+    C[1]=[     945    1003     753    1016 ]
+    C[2]=[    1025    1083     833    1096 ]
+    C[3]=[     996    1054     804    1067 ]
+UVM_INFO mm_coverage.sv(204) @ 1195000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1112   got=   82430   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1170   got=   71818   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     920   got=   66490   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1183   got=   93702   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     945   got=   53645   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1003   got=   62841   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     753   got=   41630   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1016   got=   65779   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1025   got=   64652   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1083   got=   63906   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     833   got=   46467   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1096   got=   69925   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     996   got=   59250   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1054   got=   73038   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     804   got=   35135   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1195000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1067   got=   67359   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=103]
+UVM_INFO mm_sequence.sv(261) @ 1196000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1196000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  46  60 251  34 ]  B[0]=[  65   6 153 154 ]
+    A[1]=[  22  84 151   7 ]  B[1]=[ 122  12  93 201 ]
+    A[2]=[ 117  80 184  12 ]  B[2]=[  36 210  78 195 ]
+    A[3]=[ 115   9 115  28 ]  B[3]=[  24  58  67  74 ]
+  Expected C:
+    C[0]=[     638     677     782    1015 ]
+    C[1]=[     511     550     655     888 ]
+    C[2]=[     640     679     784    1017 ]
+    C[3]=[     514     553     658     891 ]
+UVM_INFO mm_driver.sv(44) @ 1196000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1215000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1266000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1345000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1355000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1355000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  46  60 251  34 ]  B[0]=[  65   6 153 154 ]
+    A[1]=[  22  84 151   7 ]  B[1]=[ 122  12  93 201 ]
+    A[2]=[ 117  80 184  12 ]  B[2]=[  36 210  78 195 ]
+    A[3]=[ 115   9 115  28 ]  B[3]=[  24  58  67  74 ]
+  Expected C:
+    C[0]=[     638     677     782    1015 ]
+    C[1]=[     511     550     655     888 ]
+    C[2]=[     640     679     784    1017 ]
+    C[3]=[     514     553     658     891 ]
+UVM_INFO mm_coverage.sv(204) @ 1355000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     638   got=   20162   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     677   got=   55678   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     782   got=   34474   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1015   got=   70605   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     511   got=   17282   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     550   got=   33256   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     655   got=   23425   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     888   got=   50235   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     640   got=   24277   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     679   got=   40998   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     784   got=   40497   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1017   got=   70866   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     514   got=   13385   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     553   got=   26572   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     658   got=   29278   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1355000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     891   got=   44016   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=119]
+UVM_INFO mm_sequence.sv(261) @ 1356000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1356000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[   6 198  26 237 ]  B[0]=[  78 101 148 109 ]
+    A[1]=[ 133 191 243 198 ]  B[1]=[ 231 160  48 108 ]
+    A[2]=[  56 117 234  73 ]  B[2]=[ 127  18  56  12 ]
+    A[3]=[  57 171 197 140 ]  B[3]=[ 216   3  78  69 ]
+  Expected C:
+    C[0]=[    1119     749     797     765 ]
+    C[1]=[    1417    1047    1095    1063 ]
+    C[2]=[    1132     762     810     778 ]
+    C[3]=[    1217     847     895     863 ]
+UVM_INFO mm_driver.sv(44) @ 1356000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1375000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1426000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1505000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1515000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1515000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   6 198  26 237 ]  B[0]=[  78 101 148 109 ]
+    A[1]=[ 133 191 243 198 ]  B[1]=[ 231 160  48 108 ]
+    A[2]=[  56 117 234  73 ]  B[2]=[ 127  18  56  12 ]
+    A[3]=[  57 171 197 140 ]  B[3]=[ 216   3  78  69 ]
+  Expected C:
+    C[0]=[    1119     749     797     765 ]
+    C[1]=[    1417    1047    1095    1063 ]
+    C[2]=[    1132     762     810     778 ]
+    C[3]=[    1217     847     895     863 ]
+UVM_INFO mm_coverage.sv(204) @ 1515000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1119   got=  100700   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     749   got=   33465   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     797   got=   30334   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     765   got=   38703   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1417   got=  128124   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1047   got=   48961   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1095   got=   57904   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1063   got=   51703   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1132   got=   76881   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     762   got=   28807   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     810   got=   32702   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     778   got=   26585   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1217   got=   99206   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     847   got=   37083   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     895   got=   38596   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1515000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     863   got=   36705   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=135]
+UVM_INFO mm_sequence.sv(261) @ 1516000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1516000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  48 203 204 152 ]  B[0]=[ 169  72 249 126 ]
+    A[1]=[  68 104 225  54 ]  B[1]=[ 253 146  74 140 ]
+    A[2]=[ 157 207  27 255 ]  B[2]=[ 200 163 192 128 ]
+    A[3]=[ 242  33  34  44 ]  B[3]=[ 208 204 226 247 ]
+  Expected C:
+    C[0]=[    1437    1192    1348    1248 ]
+    C[1]=[    1281    1036    1192    1092 ]
+    C[2]=[    1476    1231    1387    1287 ]
+    C[3]=[    1183     938    1094     994 ]
+UVM_INFO mm_driver.sv(44) @ 1516000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1535000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1586000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1665000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1675000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1675000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  48 203 204 152 ]  B[0]=[ 169  72 249 126 ]
+    A[1]=[  68 104 225  54 ]  B[1]=[ 253 146  74 140 ]
+    A[2]=[ 157 207  27 255 ]  B[2]=[ 200 163 192 128 ]
+    A[3]=[ 242  33  34  44 ]  B[3]=[ 208 204 226 247 ]
+  Expected C:
+    C[0]=[    1437    1192    1348    1248 ]
+    C[1]=[    1281    1036    1192    1092 ]
+    C[2]=[    1476    1231    1387    1287 ]
+    C[3]=[    1183     938    1094     994 ]
+UVM_INFO mm_coverage.sv(204) @ 1675000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1437   got=  131887   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1192   got=   97354   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1348   got=  100494   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1248   got=   98124   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1281   got=   94036   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1036   got=   67771   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1192   got=   80032   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1092   got=   65266   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1476   got=  137344   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1231   got=   97947   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1387   got=  117225   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1287   got=  115203   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1183   got=   65199   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     938   got=   36760   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1094   got=   79172   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1675000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     994   got=   50332   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=151]
+UVM_INFO mm_sequence.sv(261) @ 1676000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1676000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  12  47 254 156 ]  B[0]=[ 178  91 236 174 ]
+    A[1]=[ 106   0  93 244 ]  B[1]=[ 118 240  65 217 ]
+    A[2]=[ 179 202  94 139 ]  B[2]=[  73 133  95  71 ]
+    A[3]=[ 147  34 209 249 ]  B[3]=[ 251 175 252 173 ]
+  Expected C:
+    C[0]=[    1089    1108    1117    1104 ]
+    C[1]=[    1063    1082    1091    1078 ]
+    C[2]=[    1234    1253    1262    1249 ]
+    C[3]=[    1259    1278    1287    1274 ]
+UVM_INFO mm_driver.sv(44) @ 1676000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1695000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1746000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1825000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1835000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1835000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  12  47 254 156 ]  B[0]=[ 178  91 236 174 ]
+    A[1]=[ 106   0  93 244 ]  B[1]=[ 118 240  65 217 ]
+    A[2]=[ 179 202  94 139 ]  B[2]=[  73 133  95  71 ]
+    A[3]=[ 147  34 209 249 ]  B[3]=[ 251 175 252 173 ]
+  Expected C:
+    C[0]=[    1089    1108    1117    1104 ]
+    C[1]=[    1063    1082    1091    1078 ]
+    C[2]=[    1234    1253    1262    1249 ]
+    C[3]=[    1259    1278    1287    1274 ]
+UVM_INFO mm_coverage.sv(204) @ 1835000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1089   got=   65380   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1108   got=   73454   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1117   got=   69329   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1104   got=   57309   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1063   got=   86901   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1082   got=   64715   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1091   got=   95339   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1078   got=   67259   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1234   got=   97449   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1253   got=  101596   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1262   got=   99332   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1249   got=  105701   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1259   got=  107934   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1278   got=   92909   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1287   got=  119505   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1835000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1274   got=   90872   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=167]
+UVM_INFO mm_sequence.sv(261) @ 1836000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1836000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 193  43 129  32 ]  B[0]=[  94  43  66 148 ]
+    A[1]=[ 121  80  13  94 ]  B[1]=[ 224 253 102  76 ]
+    A[2]=[ 208   3 235  26 ]  B[2]=[ 246  93 158 165 ]
+    A[3]=[   3 166  88 173 ]  B[3]=[  98  27 231   5 ]
+  Expected C:
+    C[0]=[    1059     813     954     791 ]
+    C[1]=[     970     724     865     702 ]
+    C[2]=[    1134     888    1029     866 ]
+    C[3]=[    1092     846     987     824 ]
+UVM_INFO mm_driver.sv(44) @ 1836000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1855000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1906000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1985000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1995000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1995000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 193  43 129  32 ]  B[0]=[  94  43  66 148 ]
+    A[1]=[ 121  80  13  94 ]  B[1]=[ 224 253 102  76 ]
+    A[2]=[ 208   3 235  26 ]  B[2]=[ 246  93 158 165 ]
+    A[3]=[   3 166  88 173 ]  B[3]=[  98  27 231   5 ]
+  Expected C:
+    C[0]=[    1059     813     954     791 ]
+    C[1]=[     970     724     865     702 ]
+    C[2]=[    1134     888    1029     866 ]
+    C[3]=[    1092     846     987     824 ]
+UVM_INFO mm_coverage.sv(204) @ 1995000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1059   got=   62644   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     813   got=   32039   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     954   got=   44898   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     791   got=   53277   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     970   got=   41704   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     724   got=   29190   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     865   got=   39914   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     702   got=   26603   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1134   got=   80582   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     888   got=   32260   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1029   got=   57170   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     866   got=   69917   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1092   got=   76068   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     846   got=   54982   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     987   got=   70997   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 1995000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     824   got=   28445   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=183]
+UVM_INFO mm_sequence.sv(261) @ 1996000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 1996000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 241  43 184  73 ]  B[0]=[  30 249 228  71 ]
+    A[1]=[ 229  88 232 130 ]  B[1]=[ 162 238 156  28 ]
+    A[2]=[  17   7  72  81 ]  B[2]=[ 156  42 161   9 ]
+    A[3]=[ 238 166 130  96 ]  B[3]=[ 105 102 154 133 ]
+  Expected C:
+    C[0]=[     994    1172    1240     782 ]
+    C[1]=[    1132    1310    1378     920 ]
+    C[2]=[     630     808     876     418 ]
+    C[3]=[    1083    1261    1329     871 ]
+UVM_INFO mm_driver.sv(44) @ 1996000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2015000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2066000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2145000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2155000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2155000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 241  43 184  73 ]  B[0]=[  30 249 228  71 ]
+    A[1]=[ 229  88 232 130 ]  B[1]=[ 162 238 156  28 ]
+    A[2]=[  17   7  72  81 ]  B[2]=[ 156  42 161   9 ]
+    A[3]=[ 238 166 130  96 ]  B[3]=[ 105 102 154 133 ]
+  Expected C:
+    C[0]=[     994    1172    1240     782 ]
+    C[1]=[    1132    1310    1378     920 ]
+    C[2]=[     630     808     876     418 ]
+    C[3]=[    1083    1261    1329     871 ]
+UVM_INFO mm_coverage.sv(204) @ 2155000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     994   got=   50565   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1172   got=   85417   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1240   got=  102522   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     782   got=   29680   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1132   got=   70968   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1310   got=  100969   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1378   got=  123312   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     920   got=   38101   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     630   got=   21381   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     808   got=   17185   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     876   got=   29034   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     418   got=   12824   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1083   got=   64392   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1261   got=  114022   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1329   got=  115874   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2155000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     871   got=   35484   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=199]
+UVM_INFO mm_sequence.sv(261) @ 2156000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2156000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 110 143 141 172 ]  B[0]=[ 245 112 244  67 ]
+    A[1]=[ 212 201 226 238 ]  B[1]=[  87  72 227 210 ]
+    A[2]=[ 153  69 175  10 ]  B[2]=[ 138  64  76 111 ]
+    A[3]=[ 160 160 143 247 ]  B[3]=[ 108   7  33  37 ]
+  Expected C:
+    C[0]=[    1144     821    1146     991 ]
+    C[1]=[    1455    1132    1457    1302 ]
+    C[2]=[     985     662     987     832 ]
+    C[3]=[    1288     965    1290    1135 ]
+UVM_INFO mm_driver.sv(44) @ 2156000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2175000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2226000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2305000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2315000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2315000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 110 143 141 172 ]  B[0]=[ 245 112 244  67 ]
+    A[1]=[ 212 201 226 238 ]  B[1]=[  87  72 227 210 ]
+    A[2]=[ 153  69 175  10 ]  B[2]=[ 138  64  76 111 ]
+    A[3]=[ 160 160 143 247 ]  B[3]=[ 108   7  33  37 ]
+  Expected C:
+    C[0]=[    1144     821    1146     991 ]
+    C[1]=[    1455    1132    1457    1302 ]
+    C[2]=[     985     662     987     832 ]
+    C[3]=[    1288     965    1290    1135 ]
+UVM_INFO mm_coverage.sv(204) @ 2315000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1144   got=   77425   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     821   got=   32844   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1146   got=   75693   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     991   got=   59415   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1455   got=  126319   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1132   got=   54346   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1457   got=  122385   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1302   got=   90306   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     985   got=   68718   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     662   got=   33374   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     987   got=   66625   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     832   got=   44536   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1288   got=   99530   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     965   got=   40321   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1290   got=   94379   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2315000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1135   got=   69332   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=215]
+UVM_INFO mm_sequence.sv(261) @ 2316000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2316000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[   6  77 237 146 ]  B[0]=[   6 227 249 192 ]
+    A[1]=[ 190  82 231   0 ]  B[1]=[   9 245 238   3 ]
+    A[2]=[ 175  69  89 124 ]  B[2]=[ 178 182 135 139 ]
+    A[3]=[  21  15 184 142 ]  B[3]=[  96 178  13 118 ]
+  Expected C:
+    C[0]=[     755    1298    1101     918 ]
+    C[1]=[     792    1335    1138     955 ]
+    C[2]=[     746    1289    1092     909 ]
+    C[3]=[     651    1194     997     814 ]
+UVM_INFO mm_driver.sv(44) @ 2316000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2335000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2386000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2465000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2475000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2475000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   6  77 237 146 ]  B[0]=[   6 227 249 192 ]
+    A[1]=[ 190  82 231   0 ]  B[1]=[   9 245 238   3 ]
+    A[2]=[ 175  69  89 124 ]  B[2]=[ 178 182 135 139 ]
+    A[3]=[  21  15 184 142 ]  B[3]=[  96 178  13 118 ]
+  Expected C:
+    C[0]=[     755    1298    1101     918 ]
+    C[1]=[     792    1335    1138     955 ]
+    C[2]=[     746    1289    1092     909 ]
+    C[3]=[     651    1194     997     814 ]
+UVM_INFO mm_coverage.sv(204) @ 2475000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     755   got=   56931   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1298   got=   89349   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1101   got=   53713   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     918   got=   51554   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     792   got=   42996   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1335   got=  105262   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1138   got=   98011   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     955   got=   68835   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     746   got=   29417   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1289   got=   94900   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1092   got=   73624   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     909   got=   60810   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     651   got=   46645   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1194   got=   67206   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     997   got=   35485   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2475000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     814   got=   46409   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=231]
+UVM_INFO mm_sequence.sv(261) @ 2476000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2476000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  81  94  44  40 ]  B[0]=[ 174  89  26 147 ]
+    A[1]=[ 162 106 251  67 ]  B[1]=[  36 164 138 163 ]
+    A[2]=[ 136  80  64  45 ]  B[2]=[ 211 146  49   9 ]
+    A[3]=[ 212 101  53 146 ]  B[3]=[  72 210 244 214 ]
+  Expected C:
+    C[0]=[     752     868     716     792 ]
+    C[1]=[    1079    1195    1043    1119 ]
+    C[2]=[     818     934     782     858 ]
+    C[3]=[    1005    1121     969    1045 ]
+UVM_INFO mm_driver.sv(44) @ 2476000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2495000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2546000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2625000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2635000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2635000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  81  94  44  40 ]  B[0]=[ 174  89  26 147 ]
+    A[1]=[ 162 106 251  67 ]  B[1]=[  36 164 138 163 ]
+    A[2]=[ 136  80  64  45 ]  B[2]=[ 211 146  49   9 ]
+    A[3]=[ 212 101  53 146 ]  B[3]=[  72 210 244 214 ]
+  Expected C:
+    C[0]=[     752     868     716     792 ]
+    C[1]=[    1079    1195    1043    1119 ]
+    C[2]=[     818     934     782     858 ]
+    C[3]=[    1005    1121     969    1045 ]
+UVM_INFO mm_coverage.sv(204) @ 2635000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     752   got=   29642   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     868   got=   37449   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     716   got=   26994   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     792   got=   36185   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1079   got=   89789   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=    1195   got=   82518   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1043   got=   47487   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1119   got=   57689   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     818   got=   43288   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     934   got=   44018   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=     782   got=   28692   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     858   got=   43238   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1005   got=   62219   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1121   got=   73830   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     969   got=   57671   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2635000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1045   got=   79348   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=247]
+UVM_INFO mm_sequence.sv(261) @ 2636000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2636000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  15   1 247 141 ]  B[0]=[ 204 200 231  49 ]
+    A[1]=[ 200  66  19 124 ]  B[1]=[  83  52 149 197 ]
+    A[2]=[  87 139  86 229 ]  B[2]=[ 242   1 205 176 ]
+    A[3]=[ 134   6  72 180 ]  B[3]=[ 125 234  61 219 ]
+  Expected C:
+    C[0]=[    1058     891    1050    1045 ]
+    C[1]=[    1063     896    1055    1050 ]
+    C[2]=[    1195    1028    1187    1182 ]
+    C[3]=[    1046     879    1038    1033 ]
+UVM_INFO mm_driver.sv(44) @ 2636000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2655000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2706000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2785000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2795000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2795000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  15   1 247 141 ]  B[0]=[ 204 200 231  49 ]
+    A[1]=[ 200  66  19 124 ]  B[1]=[  83  52 149 197 ]
+    A[2]=[  87 139  86 229 ]  B[2]=[ 242   1 205 176 ]
+    A[3]=[ 134   6  72 180 ]  B[3]=[ 125 234  61 219 ]
+  Expected C:
+    C[0]=[    1058     891    1050    1045 ]
+    C[1]=[    1063     896    1055    1050 ]
+    C[2]=[    1195    1028    1187    1182 ]
+    C[3]=[    1046     879    1038    1033 ]
+UVM_INFO mm_coverage.sv(204) @ 2795000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1058   got=   80542   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     891   got=   36293   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1050   got=   62850   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1045   got=   75283   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1063   got=   66376   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     896   got=   72467   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1055   got=   67493   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1050   got=   53302   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1195   got=   78722   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1028   got=   78300   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1187   got=   72407   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1182   got=   96933   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1046   got=   67758   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     879   got=   69304   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1038   got=   57588   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2795000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1033   got=   59840   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=263]
+UVM_INFO mm_sequence.sv(261) @ 2796000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2796000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 123  80 226 210 ]  B[0]=[ 113 167 159 234 ]
+    A[1]=[  60  50  85  65 ]  B[1]=[ 105  92  88 164 ]
+    A[2]=[  59 185 190 234 ]  B[2]=[  15  51 186 186 ]
+    A[3]=[ 162 163 191 182 ]  B[3]=[  99 114 111 197 ]
+  Expected C:
+    C[0]=[     971    1063    1183    1420 ]
+    C[1]=[     592     684     804    1041 ]
+    C[2]=[    1000    1092    1212    1449 ]
+    C[3]=[    1030    1122    1242    1479 ]
+UVM_INFO mm_driver.sv(44) @ 2796000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2815000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2866000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2945000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2955000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2955000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 123  80 226 210 ]  B[0]=[ 113 167 159 234 ]
+    A[1]=[  60  50  85  65 ]  B[1]=[ 105  92  88 164 ]
+    A[2]=[  59 185 190 234 ]  B[2]=[  15  51 186 186 ]
+    A[3]=[ 162 163 191 182 ]  B[3]=[  99 114 111 197 ]
+  Expected C:
+    C[0]=[     971    1063    1183    1420 ]
+    C[1]=[     592     684     804    1041 ]
+    C[2]=[    1000    1092    1212    1449 ]
+    C[3]=[    1030    1122    1242    1479 ]
+UVM_INFO mm_coverage.sv(204) @ 2955000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     971   got=   46479   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=    1063   got=   63367   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1183   got=   91943   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1420   got=  125308   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     592   got=   19740   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     684   got=   26365   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     804   got=   36965   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1041   got=   50855   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1000   got=   52108   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1092   got=   63239   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1212   got=   86975   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1449   got=  125584   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1030   got=   56304   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1122   got=   72539   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1242   got=   95830   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 2955000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1479   got=  136020   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=279]
+UVM_INFO mm_sequence.sv(261) @ 2956000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 2956000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  26  49  86 142 ]  B[0]=[  83 165  76  40 ]
+    A[1]=[  59 248  20   1 ]  B[1]=[  77  32   1 202 ]
+    A[2]=[ 249 198 170  23 ]  B[2]=[  94 103 124 202 ]
+    A[3]=[ 244 239 161 136 ]  B[3]=[ 167   7 243   1 ]
+  Expected C:
+    C[0]=[     724     610     747     748 ]
+    C[1]=[     749     635     772     773 ]
+    C[2]=[    1061     947    1084    1085 ]
+    C[3]=[    1201    1087    1224    1225 ]
+UVM_INFO mm_driver.sv(44) @ 2956000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2975000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3026000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3105000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3115000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3115000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  26  49  86 142 ]  B[0]=[  83 165  76  40 ]
+    A[1]=[  59 248  20   1 ]  B[1]=[  77  32   1 202 ]
+    A[2]=[ 249 198 170  23 ]  B[2]=[  94 103 124 202 ]
+    A[3]=[ 244 239 161 136 ]  B[3]=[ 167   7 243   1 ]
+  Expected C:
+    C[0]=[     724     610     747     748 ]
+    C[1]=[     749     635     772     773 ]
+    C[2]=[    1061     947    1084    1085 ]
+    C[3]=[    1201    1087    1224    1225 ]
+UVM_INFO mm_coverage.sv(204) @ 3115000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     724   got=   37729   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     610   got=   15710   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=     747   got=   47195   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     748   got=   28452   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     749   got=   26040   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     635   got=   19738   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     772   got=    7455   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     773   got=   56497   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1061   got=   55734   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     947   got=   65092   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1084   got=   45791   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1085   got=   84319   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=    1201   got=   76501   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=    1087   got=   65443   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1224   got=   71795   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3115000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=    1225   got=   90696   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=295]
+UVM_INFO mm_sequence.sv(261) @ 3116000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 3116000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 236 144  88  77 ]  B[0]=[ 218  27 139 217 ]
+    A[1]=[ 240 111  58 122 ]  B[1]=[  60  10 235  93 ]
+    A[2]=[  78 149 248 165 ]  B[2]=[ 208 217 118 177 ]
+    A[3]=[ 105  77  75 136 ]  B[3]=[  76 178 114   0 ]
+  Expected C:
+    C[0]=[    1107     977    1151    1032 ]
+    C[1]=[    1093     963    1137    1018 ]
+    C[2]=[    1202    1072    1246    1127 ]
+    C[3]=[     955     825     999     880 ]
+UVM_INFO mm_driver.sv(44) @ 3116000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 3135000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3186000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3265000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3275000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3275000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 236 144  88  77 ]  B[0]=[ 218  27 139 217 ]
+    A[1]=[ 240 111  58 122 ]  B[1]=[  60  10 235  93 ]
+    A[2]=[  78 149 248 165 ]  B[2]=[ 208 217 118 177 ]
+    A[3]=[ 105  77  75 136 ]  B[3]=[  76 178 114   0 ]
+  Expected C:
+    C[0]=[    1107     977    1151    1032 ]
+    C[1]=[    1093     963    1137    1018 ]
+    C[2]=[    1202    1072    1246    1127 ]
+    C[3]=[     955     825     999     880 ]
+UVM_INFO mm_coverage.sv(204) @ 3275000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=    1107   got=   84244   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     977   got=   40614   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1151   got=   85806   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=    1032   got=   80180   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=    1093   got=   80316   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     963   got=   41892   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=    1137   got=   80197   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=    1018   got=   72669   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=    1202   got=   90068   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=    1072   got=   86782   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1246   got=   93931   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=    1127   got=   74679   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     955   got=   53446   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     825   got=   44088   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=     999   got=   57044   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3275000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     880   got=   43221   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=311]
+UVM_INFO mm_sequence.sv(261) @ 3276000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Inside body — BUG4 active: reference model uses A+B instead of A*B
+UVM_INFO mm_sequence.sv(270) @ 3276000: uvm_test_top.env.agnt.seqr@@error_seq [ERROR_SEQ] Sending error-seq transaction:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  61  40  74 162 ]  B[0]=[ 140  37 138 143 ]
+    A[1]=[  98  89 104  12 ]  B[1]=[  17  92 214 148 ]
+    A[2]=[  28  20 141 235 ]  B[2]=[  21 133  64  61 ]
+    A[3]=[ 108 160  46 188 ]  B[3]=[ 212  31 252  91 ]
+  Expected C:
+    C[0]=[     727     630    1005     780 ]
+    C[1]=[     693     596     971     746 ]
+    C[2]=[     814     717    1092     867 ]
+    C[3]=[     892     795    1170     945 ]
+UVM_INFO mm_driver.sv(44) @ 3276000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 3295000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3346000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3425000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3435000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3435000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  61  40  74 162 ]  B[0]=[ 140  37 138 143 ]
+    A[1]=[  98  89 104  12 ]  B[1]=[  17  92 214 148 ]
+    A[2]=[  28  20 141 235 ]  B[2]=[  21 133  64  61 ]
+    A[3]=[ 108 160  46 188 ]  B[3]=[ 212  31 252  91 ]
+  Expected C:
+    C[0]=[     727     630    1005     780 ]
+    C[1]=[     693     596     971     746 ]
+    C[2]=[     814     717    1092     867 ]
+    C[3]=[     892     795    1170     945 ]
+UVM_INFO mm_coverage.sv(204) @ 3435000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[0][0]  MISMATCH   exp=     727   got=   45118   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[0][1]  MISMATCH   exp=     630   got=   20801   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[0][2]  MISMATCH   exp=    1005   got=   62538   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[0][3]  MISMATCH   exp=     780   got=   33899   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[1][0]  MISMATCH   exp=     693   got=   19961   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[1][1]  MISMATCH   exp=     596   got=   26018   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[1][2]  MISMATCH   exp=     971   got=   42250   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[1][3]  MISMATCH   exp=     746   got=   34622   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[2][0]  MISMATCH   exp=     814   got=   57041   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[2][1]  MISMATCH   exp=     717   got=   28914   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[2][2]  MISMATCH   exp=    1092   got=   76388   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[2][3]  MISMATCH   exp=     867   got=   36950   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[3][0]  MISMATCH   exp=     892   got=   58662   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[3][1]  MISMATCH   exp=     795   got=   30662   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[3][2]  MISMATCH   exp=    1170   got=   99464   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(99) @ 3435000: uvm_test_top.env.scb [COMPARE] C[3][3]  MISMATCH   exp=     945   got=   59038   <<< ERROR
+UVM_ERROR mm_scoreboard.sv(117) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] Transaction FAILED   (corner_mode=x)   [fail_cnt=327]
+UVM_INFO mm_test.sv(194) @ 3436000: uvm_test_top [TEST_CLASS] --- Phase B complete: all random sequences done ---
+UVM_INFO mm_test.sv(198) @ 3436000: uvm_test_top [TEST_CLASS] 
+================================================
+UVM_INFO mm_test.sv(201) @ 3436000: uvm_test_top [TEST_CLASS]   MM ACCELERATOR UVM TEST COMPLETE
+UVM_INFO mm_test.sv(204) @ 3436000: uvm_test_top [TEST_CLASS]   Dropping objection — UVM will proceed to report_phase
+UVM_INFO mm_test.sv(207) @ 3436000: uvm_test_top [TEST_CLASS] ================================================
+
+UVM_INFO /pkgs/synopsys/2024/vcs/vcs/V-2023.12-SP2/etc/uvm-1.1/base/uvm_objection.svh(1274) @ 3436000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO mm_coverage.sv(229) @ 3436000: uvm_test_top.env.cov [COV_CLASS] 
+============================================================
+UVM_INFO mm_coverage.sv(232) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   FUNCTIONAL COVERAGE REPORT
+UVM_INFO mm_coverage.sv(233) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ------------------------------------------------------------
+UVM_INFO mm_coverage.sv(236) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_corner_mode  : 100.00%  [4 bins : random/zero_a/identity_a/all_max]
+UVM_INFO mm_coverage.sv(240) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_a_vals       : 100.00%  [6 bins : zero/low/mid_lo/mid_hi/high/max]
+UVM_INFO mm_coverage.sv(244) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_b_vals       : 100.00%  [6 bins : zero/low/mid_lo/mid_hi/high/max]
+UVM_INFO mm_coverage.sv(248) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_result_vals  :  75.00%  [4 bins : zero/lo_range/mid_range/hi_range]
+UVM_INFO mm_coverage.sv(252) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_fsm_signals  : 100.00%  [ready/rv/start bins + ready×rv cross]
+UVM_INFO mm_coverage.sv(256) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ------------------------------------------------------------
+UVM_WARNING mm_coverage.sv(267) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   FUNCTIONAL COVERAGE INCOMPLETE — check bins above
+UVM_INFO mm_coverage.sv(271) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   Code coverage (line/branch/cond/fsm/tgl) collected by VCS -cm flags.
+UVM_INFO mm_coverage.sv(274) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   View code + functional report with:  make cov
+UVM_INFO mm_coverage.sv(277) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ============================================================
+
+UVM_INFO mm_scoreboard.sv(127) @ 3436000: uvm_test_top.env.scb [SCB_CLASS] 
+======================================================
+UVM_INFO mm_scoreboard.sv(130) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   SCOREBOARD FINAL REPORT
+UVM_INFO mm_scoreboard.sv(131) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   Transactions : PASS=0   FAIL=21
+UVM_INFO mm_scoreboard.sv(135) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   Elements     : PASS=9   FAIL=327
+UVM_ERROR mm_scoreboard.sv(150) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   OVERALL: *** 327 ELEMENT FAILURE(S) DETECTED ***
+UVM_INFO mm_scoreboard.sv(155) @ 3436000: uvm_test_top.env.scb [SCB_CLASS] ======================================================
+
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  267
+UVM_WARNING :    1
+UVM_ERROR :  349
+UVM_FATAL :    0
+** Report counts by id
+[COMPARE]   327
+[COV_CLASS]    34
+[DRIVER_CLASS]    65
+[ERROR_SEQ]    32
+[IDENTITY_SEQ]     1
+[MAX_SEQ]     1
+[MIDRANGE_SEQ]     1
+[MONITOR_CLASS]    63
+[PROJECT_INFO]     1
+[RNTST]     1
+[SCB_CLASS]    69
+[TEST_CLASS]    18
+[TEST_DONE]     1
+[UVMTOP]     1
+[ZERO_B_SEQ]     1
+[ZERO_SEQ]     1
+$finish called from file "/pkgs/synopsys/2024/vcs/vcs/V-2023.12-SP2/etc/uvm-1.1/base/uvm_root.svh", line 437.
+$finish at simulation time              3436000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3436000 ps
+CPU Time:      0.560 seconds;       Data structure size:   0.6Mb
+Mon Jun  1 14:14:53 2026

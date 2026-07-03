@@ -1,0 +1,33 @@
+Dashboard
+
+Date: Mon Jun  1 13:38:42 2026
+
+User: koyada
+
+Version: V-2023.12-SP2
+Command line: urg -dir uvm_cov_dir.vdb -format both -report uvm_cov_report
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
+ 94.90  98.97 100.00  70.41 100.00 100.00 100.00 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME   
+ 93.88  98.97 100.00  70.41 100.00 100.00 tb_top 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 92.58  96.88 100.00  66.04 100.00 100.00 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+100.00 100.00     1      
+

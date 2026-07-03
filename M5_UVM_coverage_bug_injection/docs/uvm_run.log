@@ -1,0 +1,721 @@
+UVM_INFO mm_test.sv(75) @ 0: uvm_test_top [TEST_CLASS] UVM Logging enabled — all messages mirrored to uvm_run.log
+UVM_INFO mm_test.sv(80) @ 0: uvm_test_top [PROJECT_INFO] 
+
+================================================================================
+||                                                                            ||
+||          #####  ####   #####    #####  #####  #####                      ||
+||          #      #      #        #      #   #      #                      ||
+||          ####   #      ####     #####  #####  #####                      ||
+||          #      #      #            #      #      #                      ||
+||          #####  ####   #####    #####      #  #####                      ||
+||                                                                            ||
+||   PARAMETERIZED SYSTOLIC ARRAY MATRIX MULTIPLICATION ACCELERATOR         ||
+||                                                                            ||
+||   Course    : ECE 593 - Fundamentals of Pre-Silicon Validation           ||
+||   Professor : Venkatesh Patil                                             ||
+||   Matrix    : 4 x 4  (Parameterized - run: make N=<value> all)        ||
+||                                                                            ||
+||   Group Members :                                                         ||
+||     [1] Nikhil Swarna                                                     ||
+||     [2] Hanisha Dhananjaya Produtur                                       ||
+||     [3] Venkat Sai Sumanth Koyada                                         ||
+||                                                                            ||
+================================================================================
+
+
+UVM_INFO mm_driver.sv(63) @ 0: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Asserting reset (5 cycles)...
+UVM_INFO mm_test.sv(112) @ 0: uvm_test_top [TEST_CLASS] 
+================================================
+UVM_INFO mm_test.sv(115) @ 0: uvm_test_top [TEST_CLASS]   MM ACCELERATOR UVM TEST STARTING
+UVM_INFO mm_test.sv(118) @ 0: uvm_test_top [TEST_CLASS]   Plan: 5 corner + 16 random = 21 total transactions
+UVM_INFO mm_test.sv(122) @ 0: uvm_test_top [TEST_CLASS] ================================================
+
+UVM_INFO mm_test.sv(128) @ 0: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (1/5) zero-A ---
+UVM_INFO mm_driver.sv(78) @ 75000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Reset released — DUT initialised
+UVM_INFO mm_sequence.sv(91) @ 75000: uvm_test_top.env.agnt.seqr@@zero_seq [ZERO_SEQ] Sending zero-A corner:
+  [SEQ_ITEM] corner_mode=1
+    A[0]=[   0   0   0   0 ]  B[0]=[  29 118 114 243 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[  19 102  68 157 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[  43 245  39  40 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[ 146  53  74  96 ]
+  Expected C:
+    C[0]=[       0       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_driver.sv(44) @ 75000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=1  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 95000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 146000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 225000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 235000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 235000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   0   0   0   0 ]  B[0]=[  29 118 114 243 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[  19 102  68 157 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[  43 245  39  40 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[ 146  53  74  96 ]
+  Expected C:
+    C[0]=[       0       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_coverage.sv(204) @ 235000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=25.0%  A=16.7%  B=66.7%  result=25.0%
+UVM_INFO mm_scoreboard.sv(66) @ 235000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 235000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 235000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=16]
+UVM_INFO mm_test.sv(136) @ 236000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (2/5) identity-A ---
+UVM_INFO mm_sequence.sv(123) @ 236000: uvm_test_top.env.agnt.seqr@@id_seq [IDENTITY_SEQ] Sending identity-A corner:
+  [SEQ_ITEM] corner_mode=2
+    A[0]=[   1   0   0   0 ]  B[0]=[ 201 120 237   1 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[ 111  26  94  34 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   7 157  98 181 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  61 221 194 218 ]
+  Expected C:
+    C[0]=[     201     120     237       1 ]
+    C[1]=[     111      26      94      34 ]
+    C[2]=[       7     157      98     181 ]
+    C[3]=[      61     221     194     218 ]
+UVM_INFO mm_driver.sv(44) @ 236000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=2  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 255000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 306000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 385000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 395000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 395000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   1   0   0   0 ]  B[0]=[ 201 120 237   1 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[ 111  26  94  34 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   7 157  98 181 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  61 221 194 218 ]
+  Expected C:
+    C[0]=[     201     120     237       1 ]
+    C[1]=[     111      26      94      34 ]
+    C[2]=[       7     157      98     181 ]
+    C[3]=[      61     221     194     218 ]
+UVM_INFO mm_coverage.sv(204) @ 395000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=50.0%  A=33.3%  B=66.7%  result=50.0%
+UVM_INFO mm_scoreboard.sv(66) @ 395000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 395000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 395000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=32]
+UVM_INFO mm_test.sv(144) @ 396000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (3/5) all-max ---
+UVM_INFO mm_sequence.sv(154) @ 396000: uvm_test_top.env.agnt.seqr@@max_seq [MAX_SEQ] Sending all-max corner:
+  [SEQ_ITEM] corner_mode=3
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[  260100  260100  260100  260100 ]
+    C[1]=[  260100  260100  260100  260100 ]
+    C[2]=[  260100  260100  260100  260100 ]
+    C[3]=[  260100  260100  260100  260100 ]
+UVM_INFO mm_driver.sv(44) @ 396000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=3  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 415000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 466000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 545000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 555000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 555000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[  260100  260100  260100  260100 ]
+    C[1]=[  260100  260100  260100  260100 ]
+    C[2]=[  260100  260100  260100  260100 ]
+    C[3]=[  260100  260100  260100  260100 ]
+UVM_INFO mm_coverage.sv(204) @ 555000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=75.0%  A=50.0%  B=83.3%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 555000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 555000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 555000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=48]
+UVM_INFO mm_test.sv(152) @ 556000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (4/5) zero-B ---
+UVM_INFO mm_sequence.sv(193) @ 556000: uvm_test_top.env.agnt.seqr@@zero_b_seq [ZERO_B_SEQ] Sending zero-B coverage txn:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 141 225 113 116 ]  B[0]=[   0   0   0   0 ]
+    A[1]=[  94  34 107 241 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[  75 251   3  20 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[ 118 152  35  84 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[       0       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_driver.sv(44) @ 556000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 575000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 626000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 705000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 715000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 715000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 141 225 113 116 ]  B[0]=[   0   0   0   0 ]
+    A[1]=[  94  34 107 241 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[  75 251   3  20 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[ 118 152  35  84 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[       0       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_coverage.sv(204) @ 715000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=75.0%
+UVM_INFO mm_scoreboard.sv(66) @ 715000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 715000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 715000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=64]
+UVM_INFO mm_test.sv(160) @ 716000: uvm_test_top [TEST_CLASS] --- Phase A: Corner Sequences (5/5) mid-range ---
+UVM_INFO mm_sequence.sv(237) @ 716000: uvm_test_top.env.agnt.seqr@@midrange_seq [MIDRANGE_SEQ] Sending mid-range coverage txn:
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[   2   0   0   0 ]  B[0]=[ 128   0   0   0 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     256       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_driver.sv(44) @ 716000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 735000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 786000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 865000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 875000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 875000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   2   0   0   0 ]  B[0]=[ 128   0   0   0 ]
+    A[1]=[   0   0   0   0 ]  B[1]=[   0   0   0   0 ]
+    A[2]=[   0   0   0   0 ]  B[2]=[   0   0   0   0 ]
+    A[3]=[   0   0   0   0 ]  B[3]=[   0   0   0   0 ]
+  Expected C:
+    C[0]=[     256       0       0       0 ]
+    C[1]=[       0       0       0       0 ]
+    C[2]=[       0       0       0       0 ]
+    C[3]=[       0       0       0       0 ]
+UVM_INFO mm_coverage.sv(204) @ 875000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 875000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 875000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 875000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=80]
+UVM_INFO mm_test.sv(169) @ 876000: uvm_test_top [TEST_CLASS] --- Phase A complete: 5 corner transactions done ---
+UVM_INFO mm_test.sv(175) @ 876000: uvm_test_top [TEST_CLASS] --- Phase B: 16 Random Sequences starting ---
+UVM_INFO mm_sequence.sv(60) @ 876000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 129 222 137 235 ]  B[0]=[  29  72 166  84 ]
+    A[1]=[  76 158 172 192 ]  B[1]=[   6 188 152 131 ]
+    A[2]=[ 165  83 180 254 ]  B[2]=[ 185 108 228  58 ]
+    A[3]=[  72  90 223 154 ]  B[3]=[  12 151 166 119 ]
+  Expected C:
+    C[0]=[   33238  101305  125404   75829 ]
+    C[1]=[   37276   82744  107720   59906 ]
+    C[2]=[   41631   85278  123210   65399 ]
+    C[3]=[   45731   69442  102040   49098 ]
+UVM_INFO mm_driver.sv(44) @ 876000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 895000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 946000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1025000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1035000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1035000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 129 222 137 235 ]  B[0]=[  29  72 166  84 ]
+    A[1]=[  76 158 172 192 ]  B[1]=[   6 188 152 131 ]
+    A[2]=[ 165  83 180 254 ]  B[2]=[ 185 108 228  58 ]
+    A[3]=[  72  90 223 154 ]  B[3]=[  12 151 166 119 ]
+  Expected C:
+    C[0]=[   33238  101305  125404   75829 ]
+    C[1]=[   37276   82744  107720   59906 ]
+    C[2]=[   41631   85278  123210   65399 ]
+    C[3]=[   45731   69442  102040   49098 ]
+UVM_INFO mm_coverage.sv(204) @ 1035000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1035000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=96]
+UVM_INFO mm_sequence.sv(60) @ 1036000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  42  31 116 214 ]  B[0]=[ 167 117 250  84 ]
+    A[1]=[ 126 121  19  54 ]  B[1]=[ 110 111  31  34 ]
+    A[2]=[   4 201 183 144 ]  B[2]=[  56 153   1  83 ]
+    A[3]=[  29 192 224 119 ]  B[3]=[  85 131 126 238 ]
+  Expected C:
+    C[0]=[   35110   54137   38541   65142 ]
+    C[1]=[   40006   38154   42074   29127 ]
+    C[2]=[   45266   69642   25558   56631 ]
+    C[3]=[   48622   74566   28420   55878 ]
+UVM_INFO mm_driver.sv(44) @ 1036000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1055000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1106000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1185000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1195000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1195000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  42  31 116 214 ]  B[0]=[ 167 117 250  84 ]
+    A[1]=[ 126 121  19  54 ]  B[1]=[ 110 111  31  34 ]
+    A[2]=[   4 201 183 144 ]  B[2]=[  56 153   1  83 ]
+    A[3]=[  29 192 224 119 ]  B[3]=[  85 131 126 238 ]
+  Expected C:
+    C[0]=[   35110   54137   38541   65142 ]
+    C[1]=[   40006   38154   42074   29127 ]
+    C[2]=[   45266   69642   25558   56631 ]
+    C[3]=[   48622   74566   28420   55878 ]
+UVM_INFO mm_coverage.sv(204) @ 1195000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1195000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=112]
+UVM_INFO mm_sequence.sv(60) @ 1196000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 235 143 135 163 ]  B[0]=[ 171  82 232 200 ]
+    A[1]=[ 251 193  17 246 ]  B[1]=[ 167  36 120 112 ]
+    A[2]=[  48  92  84  31 ]  B[2]=[ 219  67 187  48 ]
+    A[3]=[ 207 248 143  88 ]  B[3]=[  91  71 104  17 ]
+  Expected C:
+    C[0]=[  108464   45036  113877   72267 ]
+    C[1]=[  101261   46135  110155   76814 ]
+    C[2]=[   44789   15077   41108   24463 ]
+    C[3]=[  116138   41731  113677   77536 ]
+UVM_INFO mm_driver.sv(44) @ 1196000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1215000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1266000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1345000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1355000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1355000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 235 143 135 163 ]  B[0]=[ 171  82 232 200 ]
+    A[1]=[ 251 193  17 246 ]  B[1]=[ 167  36 120 112 ]
+    A[2]=[  48  92  84  31 ]  B[2]=[ 219  67 187  48 ]
+    A[3]=[ 207 248 143  88 ]  B[3]=[  91  71 104  17 ]
+  Expected C:
+    C[0]=[  108464   45036  113877   72267 ]
+    C[1]=[  101261   46135  110155   76814 ]
+    C[2]=[   44789   15077   41108   24463 ]
+    C[3]=[  116138   41731  113677   77536 ]
+UVM_INFO mm_coverage.sv(204) @ 1355000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1355000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=128]
+UVM_INFO mm_sequence.sv(60) @ 1356000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 176  68   4  91 ]  B[0]=[ 164 253 205  54 ]
+    A[1]=[ 253 147 193 218 ]  B[1]=[ 161 252  30 187 ]
+    A[2]=[  37 202  96 144 ]  B[2]=[  84 209 196 202 ]
+    A[3]=[ 200 180  13 181 ]  B[3]=[ 255 213  58 188 ]
+  Expected C:
+    C[0]=[   63353   81883   44182   40136 ]
+    C[1]=[  136961  187824  106747  121121 ]
+    C[2]=[   83374  111001   40813   86236 ]
+    C[3]=[  109027  137230   59446   81114 ]
+UVM_INFO mm_driver.sv(44) @ 1356000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1375000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1426000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1505000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1515000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1515000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 176  68   4  91 ]  B[0]=[ 164 253 205  54 ]
+    A[1]=[ 253 147 193 218 ]  B[1]=[ 161 252  30 187 ]
+    A[2]=[  37 202  96 144 ]  B[2]=[  84 209 196 202 ]
+    A[3]=[ 200 180  13 181 ]  B[3]=[ 255 213  58 188 ]
+  Expected C:
+    C[0]=[   63353   81883   44182   40136 ]
+    C[1]=[  136961  187824  106747  121121 ]
+    C[2]=[   83374  111001   40813   86236 ]
+    C[3]=[  109027  137230   59446   81114 ]
+UVM_INFO mm_coverage.sv(204) @ 1515000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1515000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=144]
+UVM_INFO mm_sequence.sv(60) @ 1516000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=2):
+  [SEQ_ITEM] corner_mode=2
+    A[0]=[   1   0   0   0 ]  B[0]=[   4  91 159  15 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[  37 236 194 126 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   3  48 136 136 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  47 139   7 217 ]
+  Expected C:
+    C[0]=[       4      91     159      15 ]
+    C[1]=[      37     236     194     126 ]
+    C[2]=[       3      48     136     136 ]
+    C[3]=[      47     139       7     217 ]
+UVM_INFO mm_driver.sv(44) @ 1516000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=2  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1535000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1586000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1665000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1675000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1675000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[   1   0   0   0 ]  B[0]=[   4  91 159  15 ]
+    A[1]=[   0   1   0   0 ]  B[1]=[  37 236 194 126 ]
+    A[2]=[   0   0   1   0 ]  B[2]=[   3  48 136 136 ]
+    A[3]=[   0   0   0   1 ]  B[3]=[  47 139   7 217 ]
+  Expected C:
+    C[0]=[       4      91     159      15 ]
+    C[1]=[      37     236     194     126 ]
+    C[2]=[       3      48     136     136 ]
+    C[3]=[      47     139       7     217 ]
+UVM_INFO mm_coverage.sv(204) @ 1675000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1675000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=160]
+UVM_INFO mm_sequence.sv(60) @ 1676000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  11  77  44 208 ]  B[0]=[ 230  49 205   2 ]
+    A[1]=[  83  31 195 108 ]  B[1]=[ 190  83 180 219 ]
+    A[2]=[  28 213 180 225 ]  B[2]=[ 106 132 208 206 ]
+    A[3]=[ 165 167 195 177 ]  B[3]=[  90 117  75  85 ]
+  Expected C:
+    C[0]=[   40544   37074   40867   43629 ]
+    C[1]=[   55370   45016   71255   56305 ]
+    C[2]=[   86240   69136   98395  102908 ]
+    C[3]=[  106280   68395  117720   92118 ]
+UVM_INFO mm_driver.sv(44) @ 1676000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1695000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1746000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1825000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1835000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1835000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  11  77  44 208 ]  B[0]=[ 230  49 205   2 ]
+    A[1]=[  83  31 195 108 ]  B[1]=[ 190  83 180 219 ]
+    A[2]=[  28 213 180 225 ]  B[2]=[ 106 132 208 206 ]
+    A[3]=[ 165 167 195 177 ]  B[3]=[  90 117  75  85 ]
+  Expected C:
+    C[0]=[   40544   37074   40867   43629 ]
+    C[1]=[   55370   45016   71255   56305 ]
+    C[2]=[   86240   69136   98395  102908 ]
+    C[3]=[  106280   68395  117720   92118 ]
+UVM_INFO mm_coverage.sv(204) @ 1835000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1835000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=176]
+UVM_INFO mm_sequence.sv(60) @ 1836000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  37  21 216 207 ]  B[0]=[ 210 235   9  87 ]
+    A[1]=[ 166 134 205   1 ]  B[1]=[ 145 234  16  13 ]
+    A[2]=[   8 212 186 238 ]  B[2]=[ 149 163  58 182 ]
+    A[3]=[ 209  43 205 160 ]  B[3]=[ 143  21  81  95 ]
+  Expected C:
+    C[0]=[   72600   53164   29964   62469 ]
+    C[1]=[   84978  103802   15609   53589 ]
+    C[2]=[   94168   86804   33530   59914 ]
+    C[3]=[  103550   95952   27419   71252 ]
+UVM_INFO mm_driver.sv(44) @ 1836000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 1855000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 1906000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 1985000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 1995000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 1995000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  37  21 216 207 ]  B[0]=[ 210 235   9  87 ]
+    A[1]=[ 166 134 205   1 ]  B[1]=[ 145 234  16  13 ]
+    A[2]=[   8 212 186 238 ]  B[2]=[ 149 163  58 182 ]
+    A[3]=[ 209  43 205 160 ]  B[3]=[ 143  21  81  95 ]
+  Expected C:
+    C[0]=[   72600   53164   29964   62469 ]
+    C[1]=[   84978  103802   15609   53589 ]
+    C[2]=[   94168   86804   33530   59914 ]
+    C[3]=[  103550   95952   27419   71252 ]
+UVM_INFO mm_coverage.sv(204) @ 1995000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 1995000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=192]
+UVM_INFO mm_sequence.sv(60) @ 1996000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 122  16 159 171 ]  B[0]=[ 178 169 137  23 ]
+    A[1]=[  57 161 106 105 ]  B[1]=[  95  76  66 235 ]
+    A[2]=[  97 189  97   2 ]  B[2]=[ 239 129 246  78 ]
+    A[3]=[  58 122 160  66 ]  B[3]=[   7 157 195 139 ]
+  Expected C:
+    C[0]=[   62434   69192   90229   42737 ]
+    C[1]=[   51510   52028   64986   62009 ]
+    C[2]=[   58418   43584   50015   54490 ]
+    C[3]=[   60616   50076   68228   51658 ]
+UVM_INFO mm_driver.sv(44) @ 1996000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2015000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2066000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2145000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2155000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2155000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 122  16 159 171 ]  B[0]=[ 178 169 137  23 ]
+    A[1]=[  57 161 106 105 ]  B[1]=[  95  76  66 235 ]
+    A[2]=[  97 189  97   2 ]  B[2]=[ 239 129 246  78 ]
+    A[3]=[  58 122 160  66 ]  B[3]=[   7 157 195 139 ]
+  Expected C:
+    C[0]=[   62434   69192   90229   42737 ]
+    C[1]=[   51510   52028   64986   62009 ]
+    C[2]=[   58418   43584   50015   54490 ]
+    C[3]=[   60616   50076   68228   51658 ]
+UVM_INFO mm_coverage.sv(204) @ 2155000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2155000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=208]
+UVM_INFO mm_sequence.sv(60) @ 2156000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 157 130 171 255 ]  B[0]=[  36   9  52 131 ]
+    A[1]=[ 221  94 203 160 ]  B[1]=[ 153  67 117 243 ]
+    A[2]=[ 194 165 145 227 ]  B[2]=[  15   9  60 197 ]
+    A[3]=[  32 169 156  26 ]  B[3]=[  53  52 198 218 ]
+  Expected C:
+    C[0]=[   41622   24922   84124  141434 ]
+    C[1]=[   33863   18434   66350  126664 ]
+    C[2]=[   46435   25910   83039  143560 ]
+    C[3]=[   30727   14367   35945   81659 ]
+UVM_INFO mm_driver.sv(44) @ 2156000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2175000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2226000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2305000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2315000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2315000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 157 130 171 255 ]  B[0]=[  36   9  52 131 ]
+    A[1]=[ 221  94 203 160 ]  B[1]=[ 153  67 117 243 ]
+    A[2]=[ 194 165 145 227 ]  B[2]=[  15   9  60 197 ]
+    A[3]=[  32 169 156  26 ]  B[3]=[  53  52 198 218 ]
+  Expected C:
+    C[0]=[   41622   24922   84124  141434 ]
+    C[1]=[   33863   18434   66350  126664 ]
+    C[2]=[   46435   25910   83039  143560 ]
+    C[3]=[   30727   14367   35945   81659 ]
+UVM_INFO mm_coverage.sv(204) @ 2315000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2315000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=224]
+UVM_INFO mm_sequence.sv(60) @ 2316000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 181 212 251 148 ]  B[0]=[ 229  87 167 127 ]
+    A[1]=[ 252 133 120 252 ]  B[1]=[ 139  87  85  76 ]
+    A[2]=[ 226 109  24 238 ]  B[2]=[ 167 156  64 124 ]
+    A[3]=[  25 114 195 138 ]  B[3]=[  39  87 166  84 ]
+  Expected C:
+    C[0]=[  118606   86223   88879   82655 ]
+    C[1]=[  106063   74139  102901   78160 ]
+    C[2]=[   80195   53595   88051   59954 ]
+    C[3]=[   59518   54519   49253   47611 ]
+UVM_INFO mm_driver.sv(44) @ 2316000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2335000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2386000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2465000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2475000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2475000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 181 212 251 148 ]  B[0]=[ 229  87 167 127 ]
+    A[1]=[ 252 133 120 252 ]  B[1]=[ 139  87  85  76 ]
+    A[2]=[ 226 109  24 238 ]  B[2]=[ 167 156  64 124 ]
+    A[3]=[  25 114 195 138 ]  B[3]=[  39  87 166  84 ]
+  Expected C:
+    C[0]=[  118606   86223   88879   82655 ]
+    C[1]=[  106063   74139  102901   78160 ]
+    C[2]=[   80195   53595   88051   59954 ]
+    C[3]=[   59518   54519   49253   47611 ]
+UVM_INFO mm_coverage.sv(204) @ 2475000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2475000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=240]
+UVM_INFO mm_sequence.sv(60) @ 2476000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[  47 100 191   0 ]  B[0]=[ 190  66 134 133 ]
+    A[1]=[  79 104  85 173 ]  B[1]=[  83  55  96 219 ]
+    A[2]=[   3 245 247 199 ]  B[2]=[   8 141  31 128 ]
+    A[3]=[ 203 175  58  10 ]  B[3]=[ 116 112   6  99 ]
+  Expected C:
+    C[0]=[   18758   35533   21819   52599 ]
+    C[1]=[   44390   42295   24243   61290 ]
+    C[2]=[   45965   70788   32773  105371 ]
+    C[3]=[   54719   32321   45860   73738 ]
+UVM_INFO mm_driver.sv(44) @ 2476000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2495000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2546000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2625000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2635000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2635000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[  47 100 191   0 ]  B[0]=[ 190  66 134 133 ]
+    A[1]=[  79 104  85 173 ]  B[1]=[  83  55  96 219 ]
+    A[2]=[   3 245 247 199 ]  B[2]=[   8 141  31 128 ]
+    A[3]=[ 203 175  58  10 ]  B[3]=[ 116 112   6  99 ]
+  Expected C:
+    C[0]=[   18758   35533   21819   52599 ]
+    C[1]=[   44390   42295   24243   61290 ]
+    C[2]=[   45965   70788   32773  105371 ]
+    C[3]=[   54719   32321   45860   73738 ]
+UVM_INFO mm_coverage.sv(204) @ 2635000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2635000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=256]
+UVM_INFO mm_sequence.sv(60) @ 2636000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 175 127 179  96 ]  B[0]=[ 222  68 232 201 ]
+    A[1]=[  95 208 179   2 ]  B[1]=[ 166 223 108 128 ]
+    A[2]=[  36 104  57  26 ]  B[2]=[ 156 128  14  65 ]
+    A[3]=[  37 159  63  53 ]  B[3]=[ 198 111  48 184 ]
+  Expected C:
+    C[0]=[  106864   73789   61430   80730 ]
+    C[1]=[   83938   75978   47106   57722 ]
+    C[2]=[   39296   35822   21630   29037 ]
+    C[3]=[   54930   51920   29182   41636 ]
+UVM_INFO mm_driver.sv(44) @ 2636000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2655000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2706000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2785000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2795000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2795000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 175 127 179  96 ]  B[0]=[ 222  68 232 201 ]
+    A[1]=[  95 208 179   2 ]  B[1]=[ 166 223 108 128 ]
+    A[2]=[  36 104  57  26 ]  B[2]=[ 156 128  14  65 ]
+    A[3]=[  37 159  63  53 ]  B[3]=[ 198 111  48 184 ]
+  Expected C:
+    C[0]=[  106864   73789   61430   80730 ]
+    C[1]=[   83938   75978   47106   57722 ]
+    C[2]=[   39296   35822   21630   29037 ]
+    C[3]=[   54930   51920   29182   41636 ]
+UVM_INFO mm_coverage.sv(204) @ 2795000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2795000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=272]
+UVM_INFO mm_sequence.sv(60) @ 2796000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=3):
+  [SEQ_ITEM] corner_mode=3
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[  260100  260100  260100  260100 ]
+    C[1]=[  260100  260100  260100  260100 ]
+    C[2]=[  260100  260100  260100  260100 ]
+    C[3]=[  260100  260100  260100  260100 ]
+UVM_INFO mm_driver.sv(44) @ 2796000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=3  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2815000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 2866000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 2945000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 2955000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 2955000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 255 255 255 255 ]  B[0]=[ 255 255 255 255 ]
+    A[1]=[ 255 255 255 255 ]  B[1]=[ 255 255 255 255 ]
+    A[2]=[ 255 255 255 255 ]  B[2]=[ 255 255 255 255 ]
+    A[3]=[ 255 255 255 255 ]  B[3]=[ 255 255 255 255 ]
+  Expected C:
+    C[0]=[  260100  260100  260100  260100 ]
+    C[1]=[  260100  260100  260100  260100 ]
+    C[2]=[  260100  260100  260100  260100 ]
+    C[3]=[  260100  260100  260100  260100 ]
+UVM_INFO mm_coverage.sv(204) @ 2955000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 2955000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=288]
+UVM_INFO mm_sequence.sv(60) @ 2956000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 231  97 136 161 ]  B[0]=[ 239 231 212 117 ]
+    A[1]=[  69 249  37  42 ]  B[1]=[ 228 241  29 233 ]
+    A[2]=[  10  66 156  33 ]  B[2]=[  72 171 204  48 ]
+    A[3]=[ 178  70  19 160 ]  B[3]=[ 172 171 242  15 ]
+  Expected C:
+    C[0]=[  114809  127525  118491   58571 ]
+    C[1]=[   83151   89457   39561   68496 ]
+    C[2]=[   34346   50535   43844   24531 ]
+    C[3]=[   87390   88597   82362   40448 ]
+UVM_INFO mm_driver.sv(44) @ 2956000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 2975000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3026000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3105000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3115000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3115000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 231  97 136 161 ]  B[0]=[ 239 231 212 117 ]
+    A[1]=[  69 249  37  42 ]  B[1]=[ 228 241  29 233 ]
+    A[2]=[  10  66 156  33 ]  B[2]=[  72 171 204  48 ]
+    A[3]=[ 178  70  19 160 ]  B[3]=[ 172 171 242  15 ]
+  Expected C:
+    C[0]=[  114809  127525  118491   58571 ]
+    C[1]=[   83151   89457   39561   68496 ]
+    C[2]=[   34346   50535   43844   24531 ]
+    C[3]=[   87390   88597   82362   40448 ]
+UVM_INFO mm_coverage.sv(204) @ 3115000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 3115000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=304]
+UVM_INFO mm_sequence.sv(60) @ 3116000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 239 139 197 115 ]  B[0]=[  84  46  65 246 ]
+    A[1]=[  94  49 168 173 ]  B[1]=[  99 105 216 188 ]
+    A[2]=[  21  36 182 215 ]  B[2]=[  74 110  19  81 ]
+    A[3]=[   7 250  54  22 ]  B[3]=[ 255  52 147  89 ]
+  Expected C:
+    C[0]=[   77740   53239   66207  111118 ]
+    C[1]=[   69294   36945   45317   61341 ]
+    C[2]=[   73621   35946   44204   45811 ]
+    C[3]=[   34944   33656   58715   55054 ]
+UVM_INFO mm_driver.sv(44) @ 3116000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 3135000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3186000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3265000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3275000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3275000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 239 139 197 115 ]  B[0]=[  84  46  65 246 ]
+    A[1]=[  94  49 168 173 ]  B[1]=[  99 105 216 188 ]
+    A[2]=[  21  36 182 215 ]  B[2]=[  74 110  19  81 ]
+    A[3]=[   7 250  54  22 ]  B[3]=[ 255  52 147  89 ]
+  Expected C:
+    C[0]=[   77740   53239   66207  111118 ]
+    C[1]=[   69294   36945   45317   61341 ]
+    C[2]=[   73621   35946   44204   45811 ]
+    C[3]=[   34944   33656   58715   55054 ]
+UVM_INFO mm_coverage.sv(204) @ 3275000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 3275000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=320]
+UVM_INFO mm_sequence.sv(60) @ 3276000: uvm_test_top.env.agnt.seqr@@test_seq [TEST_SEQ] Sending transaction (corner_mode=0):
+  [SEQ_ITEM] corner_mode=0
+    A[0]=[ 101  18 170 137 ]  B[0]=[ 101  50  10 160 ]
+    A[1]=[ 111  56   3 204 ]  B[1]=[ 207 159 205 193 ]
+    A[2]=[  82  43 222 232 ]  B[2]=[ 226 244 102   5 ]
+    A[3]=[ 204 198  27 128 ]  B[3]=[ 215  54 227  46 ]
+  Expected C:
+    C[0]=[   81802   56790   53139   26786 ]
+    C[1]=[   67341   26202   59204   37967 ]
+    C[2]=[  117235   77633   84943   33201 ]
+    C[3]=[   95212   55182   74440   76877 ]
+UVM_INFO mm_driver.sv(44) @ 3276000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] Received seq_item — corner_mode=0  Driving DUT...
+UVM_INFO mm_monitor.sv(64) @ 3295000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] start=1 detected — new transaction beginning
+UVM_INFO mm_driver.sv(123) @ 3346000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] valid_in_upstream=0 — data phase done, waiting for result_valid
+UVM_INFO mm_driver.sv(129) @ 3425000: uvm_test_top.env.agnt.drv [DRIVER_CLASS] result_valid=1 — DUT in DONE state, transaction complete
+UVM_INFO mm_monitor.sv(101) @ 3435000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] result_valid=1 — capturing DUT result bus
+UVM_INFO mm_monitor.sv(110) @ 3435000: uvm_test_top.env.agnt.mon [MONITOR_CLASS] Transaction observed and packaged:
+  [SEQ_ITEM] corner_mode=x
+    A[0]=[ 101  18 170 137 ]  B[0]=[ 101  50  10 160 ]
+    A[1]=[ 111  56   3 204 ]  B[1]=[ 207 159 205 193 ]
+    A[2]=[  82  43 222 232 ]  B[2]=[ 226 244 102   5 ]
+    A[3]=[ 204 198  27 128 ]  B[3]=[ 215  54 227  46 ]
+  Expected C:
+    C[0]=[   81802   56790   53139   26786 ]
+    C[1]=[   67341   26202   59204   37967 ]
+    C[2]=[  117235   77633   84943   33201 ]
+    C[3]=[   95212   55182   74440   76877 ]
+UVM_INFO mm_coverage.sv(204) @ 3435000: uvm_test_top.env.cov [COV_CLASS] Running cov: mode=100.0%  A=100.0%  B=100.0%  result=100.0%
+UVM_INFO mm_scoreboard.sv(66) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] Checking transaction (corner_mode=x) — queue depth after pop: 0
+UVM_INFO mm_scoreboard.sv(81) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] --- Comparing transaction (corner_mode=x) ---
+UVM_INFO mm_scoreboard.sv(111) @ 3435000: uvm_test_top.env.scb [SCB_CLASS] Transaction PASSED   (corner_mode=x)   [pass_cnt=336]
+UVM_INFO mm_test.sv(194) @ 3436000: uvm_test_top [TEST_CLASS] --- Phase B complete: all random sequences done ---
+UVM_INFO mm_test.sv(198) @ 3436000: uvm_test_top [TEST_CLASS] 
+================================================
+UVM_INFO mm_test.sv(201) @ 3436000: uvm_test_top [TEST_CLASS]   MM ACCELERATOR UVM TEST COMPLETE
+UVM_INFO mm_test.sv(204) @ 3436000: uvm_test_top [TEST_CLASS]   Dropping objection — UVM will proceed to report_phase
+UVM_INFO mm_test.sv(207) @ 3436000: uvm_test_top [TEST_CLASS] ================================================
+
+UVM_INFO mm_coverage.sv(229) @ 3436000: uvm_test_top.env.cov [COV_CLASS] 
+============================================================
+UVM_INFO mm_coverage.sv(232) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   FUNCTIONAL COVERAGE REPORT
+UVM_INFO mm_coverage.sv(233) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ------------------------------------------------------------
+UVM_INFO mm_coverage.sv(236) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_corner_mode  : 100.00%  [4 bins : random/zero_a/identity_a/all_max]
+UVM_INFO mm_coverage.sv(240) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_a_vals       : 100.00%  [6 bins : zero/low/mid_lo/mid_hi/high/max]
+UVM_INFO mm_coverage.sv(244) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_b_vals       : 100.00%  [6 bins : zero/low/mid_lo/mid_hi/high/max]
+UVM_INFO mm_coverage.sv(248) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_result_vals  : 100.00%  [4 bins : zero/lo_range/mid_range/hi_range]
+UVM_INFO mm_coverage.sv(252) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   cg_fsm_signals  : 100.00%  [ready/rv/start bins + ready×rv cross]
+UVM_INFO mm_coverage.sv(256) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ------------------------------------------------------------
+UVM_INFO mm_coverage.sv(263) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   *** FUNCTIONAL COVERAGE : 100%  — ALL BINS HIT ***
+UVM_INFO mm_coverage.sv(271) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   Code coverage (line/branch/cond/fsm/tgl) collected by VCS -cm flags.
+UVM_INFO mm_coverage.sv(274) @ 3436000: uvm_test_top.env.cov [COV_CLASS]   View code + functional report with:  make cov
+UVM_INFO mm_coverage.sv(277) @ 3436000: uvm_test_top.env.cov [COV_CLASS] ============================================================
+
+UVM_INFO mm_scoreboard.sv(127) @ 3436000: uvm_test_top.env.scb [SCB_CLASS] 
+======================================================
+UVM_INFO mm_scoreboard.sv(130) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   SCOREBOARD FINAL REPORT
+UVM_INFO mm_scoreboard.sv(131) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   Transactions : PASS=21   FAIL=0
+UVM_INFO mm_scoreboard.sv(135) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   Elements     : PASS=336   FAIL=0
+UVM_INFO mm_scoreboard.sv(146) @ 3436000: uvm_test_top.env.scb [SCB_CLASS]   OVERALL: *** ALL TESTS PASSED ***
+UVM_INFO mm_scoreboard.sv(155) @ 3436000: uvm_test_top.env.scb [SCB_CLASS] ======================================================
+
