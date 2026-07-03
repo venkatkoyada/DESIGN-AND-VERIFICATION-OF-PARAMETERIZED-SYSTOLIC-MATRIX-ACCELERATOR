@@ -1,23 +1,15 @@
-# Milestone 2 & 3 — Class-Based Testbench with Functional Coverage
+# Milestone 2 & 3 - Class-Based Testbench with Functional Coverage
 
-## What this milestone covers
-- Same RTL design, now verified with a **class-based, constrained-random
-  testbench** (transaction, generator, driver, monitor, scoreboard, coverage
-  collector — OOP-style, pre-UVM).
-- **Functional coverage** is added to measure how thoroughly the verification
-  space (input combinations, corner cases) has actually been exercised, instead
-  of just relying on a fixed set of directed tests.
+## Overview
+Building on the Milestone 1 RTL, this milestone replaces the directed testbench with a class-based, constrained-random verification environment (transaction, generator, driver, monitor, scoreboard, and coverage collector). This was a 3-person team project.
 
-## Folder layout
-- `src/` — RTL design files for this milestone
-- `tb/` — class-based testbench components (transaction, generator, driver, monitor, scoreboard, coverage, interface, top)
-- `scripts/` — Makefiles to run the class-based simulation
-- `docs/` — design spec, verification plan, milestone report, simulation transcript, and coverage reports (`coverage_reports/`)
+## My Contribution
+On the RTL side, `pe.sv` and `input_skew.sv` remain my contribution from Milestone 1. On the verification side, I contributed the **generator**, **output monitor**, and **environment** (`mm_generator.sv`, `mm_monitor.sv`, `mm_env.sv`) — roughly a third of this milestone's testbench work — handling randomized stimulus generation, output observation, and environment integration.
 
-## Why this approach
-Moving from directed to class-based verification lets the testbench generate
-**randomized, constrained stimulus** rather than a fixed set of hand-picked
-vectors, and the scoreboard self-checks results automatically. Functional
-coverage tells us which scenarios have actually been hit, closing the gap left
-by Milestone 1's directed-only approach. This class-based architecture is also
-the direct stepping stone to the UVM testbench built in Milestone 4.
+## Project Structure
+```
+src/      → RTL design files
+tb/       → Class-based testbench (transaction, generator, driver, monitor, scoreboard, coverage, interface, top)
+scripts/  → Makefiles to run simulation
+docs/     → Design spec, verification plan, milestone report, sim transcript, coverage_reports/
+```
