@@ -1,19 +1,15 @@
 # Milestone 1 — RTL + Directed (Self-Checking) Testbench
 
-## What this milestone covers
-- Initial RTL implementation of the systolic array matrix-multiplication accelerator.
-- A **traditional, directed, self-checking testbench** — fixed input stimulus with
-  hardcoded expected outputs, no randomization or functional coverage.
+## Overview
+This milestone covers the initial RTL implementation of a parameterized systolic array matrix-multiplication accelerator, verified using a directed, self-checking testbench. This was a 3-person team project. The design uses a 2D array of processing elements (PEs) to perform matrix multiplication via a systolic dataflow, with staggered input skewing and FSM-based control.
 
-## Folder layout
-- `src/` — RTL design files (`pe.sv`, `systolic_array.sv`, `controller.sv`, `input_skew.sv`, `mm_accelerator_top.sv`)
-- `tb/` — directed self-checking testbench
-- `scripts/` — Makefile to run the simulation
-- `docs/` — design specification and verification plan for this milestone
+## My Contribution
+I designed the RTL for the processing element (`pe.sv`) — the MAC datapath, pass-through logic, valid pipeline, and clear behavior — and the input skew logic (`input_skew.sv`), implementing the parameterized shift-register skew chains that stagger inputs into the array. These modules carry forward into every subsequent milestone.
 
-## Why this approach
-Directed testing is the simplest way to sanity-check a new design: known inputs,
-known expected outputs, pass/fail comparison. It's fast to write but doesn't scale —
-it only catches bugs on the specific cases you thought to test. That limitation is
-exactly what Milestone 2/3 addresses by moving to class-based, randomized,
-coverage-driven verification.
+## Project Structure
+```
+src/      → RTL design files
+tb/       → Directed, self-checking testbench
+scripts/  → Makefile to run simulation
+docs/     → Design specification and verification plan
+```
