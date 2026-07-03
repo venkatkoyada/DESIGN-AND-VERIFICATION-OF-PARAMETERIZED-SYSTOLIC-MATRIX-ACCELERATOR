@@ -1,8 +1,8 @@
 # Design and Verification of a Parameterized Systolic Matrix Accelerator
 
-SystemVerilog RTL design and a progressively advancing verification environment for a parameterized systolic array matrix-multiplication accelerator — from a directed self-checking testbench, through class-based coverage-driven verification, to a full UVM environment with functional coverage and a formal bug injection campaign.
+SystemVerilog RTL design and a progressively advancing verification environment for a parameterized systolic array matrix-multiplication accelerator - from a directed self-checking testbench, through class-based coverage-driven verification, to a full UVM environment with functional coverage and a formal bug injection campaign.
 
-Developed as a team project for ECE593 (Section 26, Group 6) by Hanisha Dhananjaya Produtur, Nikhil Swarna, and Venkat Sai Sumanth Koyada.
+Developed as a team project for ECE593 Pre Silicon verification & validation by Hanisha Dhananjaya Produtur, Nikhil Swarna, and Venkat Sai Sumanth Koyada.
 
 ## Overview
 The accelerator uses a 2D array of processing elements (PEs) performing matrix multiplication via a systolic dataflow, where operands are streamed and staggered through the array and partial sums are accumulated as they propagate. The project progresses through five milestones, each advancing the verification methodology: directed testing → class-based constrained-random with coverage → UVM → UVM with coverage closure and bug injection.
